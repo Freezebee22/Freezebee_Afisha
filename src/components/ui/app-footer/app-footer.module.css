@@ -1,0 +1,65 @@
+.footer {
+  background-color: rgb(241, 240, 245);
+  color: #2f1f20;
+  padding: 40px 24px 16px;
+  font-size: 14px;
+}
+
+.container {
+  max-width: calc(3 * 360px + 2 * 24px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.about,
+.links,
+.contacts {
+  min-width: 200px;
+}
+
+.about {
+  text-align: left; /* Привязано к левому краю */
+}
+
+.links {
+  text-align: center; /* Выравнивание по центру ячейки */
+}
+
+.contacts {
+  text-align: right; /* Прижат к правому краю */
+}
+
+.about h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.links h4,
+.contacts h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+a {
+  color: #2f1f20;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 4px;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #ccc;
+}
+
+.bottom {
+  text-align: center;
+  border-top: 1px solid #333;
+  margin-top: 32px;
+  padding-top: 12px;
+  font-size: 12px;
+  color: #aaa;
+}
