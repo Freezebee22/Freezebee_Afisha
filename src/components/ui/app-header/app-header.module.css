@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #80cfd3;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2f1f20;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.navItem {
+  text-decoration: none;
+  color: #2f1f20;
+  font-weight: 500;
+  font-size: 1.2rem;
+  transition: color 0.2s;
+}
+
+.navItem:hover {
+  color: #b19591;
+}
+
+.username {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #2f1f20;
+}
+
