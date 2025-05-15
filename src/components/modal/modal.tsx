@@ -13,8 +13,10 @@ export const Modal = memo(({ title, onClose, children }: TModalProps) => {
 		};
 
 		document.addEventListener('keydown', handleEsc);
+		document.body.classList.add("body-lock");
 		return () => {
 			document.removeEventListener('keydown', handleEsc);
+			document.body.classList.remove("body-lock");
 		};
 	}, [onClose]);
 

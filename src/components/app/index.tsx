@@ -38,7 +38,7 @@ const App = () => {
                     <Route
                         path="/event/:id"
                         element={
-                            <Modal title='meow' onClose={handleModalClose}>
+                            <Modal title='' onClose={handleModalClose}>
                                 <EventInfo/>
                             </Modal>
                         }

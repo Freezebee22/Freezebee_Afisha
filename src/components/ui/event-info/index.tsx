@@ -4,24 +4,28 @@ import { ticketsCase } from '../../../utils/tickets_case';
 
 export const EventInfoUI = ({event, count, onClick}: TEventInfoUIProps) => {
     return (
-        <div className={''}>
-            <img className={''} src={event.image} alt={event.title} />
-            <div className={''}>
-                <h3 className={''}>{event.title}</h3>
-                <div className={''}>
-                    {event.categories.map((cat) => (
-                        <span key={cat} className={''}>{cat}</span>
-                    ))}
+        <div className={styles.wrapper}>
+            <img className={styles.image} src={event.image} alt={event.title} />
+            <div className={styles.content}>
+                <h3 className={styles.title}>{event.title}</h3>
+                <div className={styles.categories}>
+                {event.categories.map((cat) => (
+                    <span key={cat} className={styles.category}>{cat}</span>
+                ))}
                 </div>
-                <p className={''}>{event.description}</p>
-                <p className={''}>Место события: {event.location}</p>
-                <p>Начало мероприятия: <p className={''}>{new Date(event.date).toLocaleDateString()}</p></p>
-                <div>
-                    <button onClick={() => onClick(-1)}>-</button> {/* если count 0 то disabled*/}
-                    <p>{count}</p>
-                    <button onClick={() => onClick(1)}>+</button> {/* если count 8 то disabled*/}
-                <button>
-                    {event.price ? `Купить ${count} ${ticketsCase(count)} за ${count * event.price}` : `Забронировать билеты`}
+                <p className={styles.description}>{event.description}</p>
+                <p className={styles.location}>Место события: {event.location}</p>
+                <p className={styles.date}>
+                Начало мероприятия: {new Date(event.date).toLocaleDateString()}
+                </p>
+                <div className={styles.controls}>
+                <button onClick={() => onClick(-1)} className={styles.counterBtn} disabled={count <= 0}>-</button>
+                <p className={styles.count}>{count}</p>
+                <button onClick={() => onClick(1)} className={styles.counterBtn} disabled={count >= 8}>+</button>
+                <button className={styles.buyBtn} disabled={count === 0}>
+                    {event.price
+                    ? `Купить ${count} ${ticketsCase(count)} за ${count * event.price}₽`
+                    : `Забронировать ${count} ${ticketsCase(count)}`}
                 </button>
                 </div>
             </div>
