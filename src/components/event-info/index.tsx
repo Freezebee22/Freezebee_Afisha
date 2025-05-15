@@ -3,14 +3,20 @@ import { EventInfoUI } from '../ui/event-info';
 import {TEventInfoProps} from './types'
 import { useSelector } from '../../services/store';
 import { useState } from 'react';
+import { Preloader } from '../preloader';
 
 export const EventInfo = () => {
     const { id } = useParams<{ id: string }>();
-    const events = useSelector(store => store.eventsReducer.data);
+    const event = useSelector(store => store.eventsReducer.data.find(e => String(e.id) === id));
+    const isLoading = useSelector(store => store.eventsReducer.isLoading);
     const [count, setCount] = useState(1);
     const handleClick = (one: number) => {
         setCount(prev => prev + one);
     };
+    
+    if (isLoading || !event) {
+        return <Preloader />;
+    }
 
-    return <EventInfoUI event={events[Number(id) - 1]} count={count} onClick={handleClick} />;
+    return <EventInfoUI event={event} count={count} onClick={handleClick} />;
 };

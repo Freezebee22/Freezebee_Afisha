@@ -1,8 +1,9 @@
 import {TEventInfoUIProps} from './types'
 import styles from './event-info.module.css'
 import { ticketsCase } from '../../../utils/tickets_case';
+import { memo } from 'react';
 
-export const EventInfoUI = ({event, count, onClick}: TEventInfoUIProps) => {
+export const EventInfoUI = memo(({event, count, onClick}: TEventInfoUIProps) => {
     return (
         <div className={styles.wrapper}>
             <img className={styles.image} src={event.image} alt={event.title} />
@@ -31,4 +32,4 @@ export const EventInfoUI = ({event, count, onClick}: TEventInfoUIProps) => {
             </div>
         </div>
     );
-};
+});

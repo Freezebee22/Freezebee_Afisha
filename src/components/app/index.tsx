@@ -30,7 +30,11 @@ const App = () => {
 
             <Routes location={backgroundLocation || location}>
                 <Route path="/" element={<Home/>}/>
-                <Route path="/event/:id" element={<EventInfo/>}/>
+                <Route path="/event/:id" element={
+                    <Modal title='' onClose={handleModalClose}>
+                        <EventInfo/>
+                    </Modal>}
+                />
             </Routes>
 
             {backgroundLocation &&
