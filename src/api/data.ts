@@ -9,6 +9,7 @@ export const data: TEvents[] = [
     image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Парк Горького, Москва",
     date: "2025-06-22T18:00:00",
+    price: 1000,
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ export const data: TEvents[] = [
     image: "https://images.unsplash.com/photo-1628642881538-b80bfc5209de?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Центральный выставочный зал «Манеж», Санкт-Петербург",
     date: "2025-06-10T12:00:00",
+    price: 1500,
   },
   {
     id: 3,
@@ -27,6 +29,7 @@ export const data: TEvents[] = [
     image: "https://images.unsplash.com/photo-1553782749-5ab8693a5f4f?q=80&w=1978&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Театр «Современник», Москва",
     date: "2025-06-15T19:30:00",
+    price: 1300,
   },
   {
     id: 4,
@@ -36,6 +39,7 @@ export const data: TEvents[] = [
     image: "https://images.unsplash.com/photo-1533158388470-9a56699990c6?q=80&w=1955&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Парк Сокольники, Москва",
     date: "2025-07-01T14:00:00",
+    price: 800,
   },
   {
     id: 5,
@@ -45,6 +49,7 @@ export const data: TEvents[] = [
     image: "https://images.unsplash.com/photo-1664231323172-711277f096d5?q=80&w=2150&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Кинотеатр под открытым небом, Казань",
     date: "2025-06-29T21:00:00",
+    price: 700,
   },
   {
     id: 6,
@@ -54,6 +59,7 @@ export const data: TEvents[] = [
     image: "https://images.unsplash.com/photo-1678646142794-253fdd20fa05?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "ВДНХ, Москва",
     date: "2025-06-20T13:00:00",
+    price: 300,
   },
   {
     id: 7,
@@ -63,6 +69,7 @@ export const data: TEvents[] = [
     image: "https://images.unsplash.com/photo-1719299246416-b4c069be9caf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Набережная реки Казанки, Казань",
     date: "2025-06-16T09:00:00",
+    price: 0,
   },
   {
     id: 8,
@@ -72,6 +79,7 @@ export const data: TEvents[] = [
     image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Технопарк Сколково, Москва",
     date: "2025-06-25T18:00:00",
+    price: 0,
   },
   {
     id: 9,
@@ -81,6 +89,7 @@ export const data: TEvents[] = [
     image: "https://images.unsplash.com/photo-1551696785-927d4ac2d35b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Площадь Искусств, Санкт-Петербург",
     date: "2025-07-03T20:00:00",
+    price: 1800,
   },
   {
     id: 10,
@@ -90,6 +99,7 @@ export const data: TEvents[] = [
     image: "https://images.unsplash.com/photo-1621211255064-8915268b62f4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Гик-пространство «Dice & Beans», Новосибирск",
     date: "2025-06-30T11:00:00",
+    price: 0,
   },
   {
     id: 11,
@@ -99,6 +109,7 @@ export const data: TEvents[] = [
     image: "https://images.unsplash.com/photo-1554881070-74595ca2b74c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Арт-кластер «Флакон», Москва",
     date: "2025-07-05T17:00:00",
+    price: 0,
   },
   {
     id: 12,
@@ -108,6 +119,7 @@ export const data: TEvents[] = [
     image: "https://images.unsplash.com/photo-1699743570117-91384b4b0400?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Шахматный клуб, Екатеринбург",
     date: "2025-07-07T10:00:00",
+    price: 0,
   },
   {
     id: 13,
@@ -117,6 +129,7 @@ export const data: TEvents[] = [
     image: "https://images.unsplash.com/photo-1610964199131-5e29387e6267?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Кафе «Смешинка», Москва",
     date: "2025-07-01T20:00:00",
+    price: 100,
   },
   {
     id: 14,
@@ -126,6 +139,7 @@ export const data: TEvents[] = [
     image: "https://images.unsplash.com/photo-1519340241574-2cec6aef0c01?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Центральный парк, Тверь",
     date: "2025-06-18T12:00:00",
+    price: 400,
   },
   {
     id: 15,
@@ -135,6 +149,7 @@ export const data: TEvents[] = [
     image: "https://images.unsplash.com/photo-1573612664822-d7d347da7b80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Лофт-площадка «Ткачи», Санкт-Петербург",
     date: "2025-07-09T11:00:00",
+    price: 0,
   },
   {
     id: 16,
@@ -144,6 +159,7 @@ export const data: TEvents[] = [
     image: "https://images.unsplash.com/photo-1584974292709-5c2f0619971b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Экоцентр «Заповедники», Москва",
     date: "2025-06-26T16:00:00",
+    price: 0,
   },
   {
     id: 17,
@@ -153,6 +169,7 @@ export const data: TEvents[] = [
     image: "https://plus.unsplash.com/premium_photo-1661776078632-a5767588a8be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Клуб «Voice», Краснодар",
     date: "2025-06-19T21:00:00",
+    price: 0,
   },
   {
     id: 18,
@@ -162,6 +179,7 @@ export const data: TEvents[] = [
     image: "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/1c1776bd1bdd921061a53953d81a393ef69ce633-1920x1080.jpg",
     location: "Киберарена, Москва",
     date: "2025-06-27T12:00:00",
+    price: 0,
   },
   {
     id: 19,
@@ -171,6 +189,7 @@ export const data: TEvents[] = [
     image: "https://images.unsplash.com/photo-1639023547114-2361bdeeab55?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Музеи города, по всей России",
     date: "2025-05-18T20:00:00",
+    price: 600,
   },
   {
     id: 20,
@@ -180,5 +199,6 @@ export const data: TEvents[] = [
     image: "https://images.unsplash.com/photo-1524863479829-916d8e77f114?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Парк Победы, Москва",
     date: "2025-07-04T08:00:00",
+    price: 0,
   },
 ];

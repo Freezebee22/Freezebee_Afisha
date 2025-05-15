@@ -6,4 +6,5 @@ export type TEvents = {
     image: string,
     location: string,
     date: string,
+    price: number,
 }
