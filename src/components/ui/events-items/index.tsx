@@ -2,8 +2,9 @@ import { EventsItem } from "../../events-item";
 import { TEventsItemsUIProps } from "./types";
 import styles from "./events-items.module.css"
 import { Link, useLocation } from "react-router-dom";
+import { memo } from "react";
 
-export const EventsItemsUI = ({events}: TEventsItemsUIProps) => {
+export const EventsItemsUI = memo(({events}: TEventsItemsUIProps) => {
     const location = useLocation();
 
     return (
@@ -18,4 +19,4 @@ export const EventsItemsUI = ({events}: TEventsItemsUIProps) => {
             </div>  
         </>
     );
-}
+})

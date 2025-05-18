@@ -1,7 +1,8 @@
 import { TEventsItemUIProps } from "./types";
 import styles from "./events-item.module.css";
+import { memo } from "react";
 
-export const EventsItemUI = ({event}: TEventsItemUIProps) => {
+export const EventsItemUI = memo(({event}: TEventsItemUIProps) => {
     return (
         <div className={styles.card}>
             <img className={styles.image} src={event.image} alt={event.title} />
@@ -18,4 +19,4 @@ export const EventsItemUI = ({event}: TEventsItemUIProps) => {
             </div>
         </div>
     );
-}
+})

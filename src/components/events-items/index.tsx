@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { useDispatch, useSelector } from "../../services/store";
 import { EventsItemsUI } from "../ui/events-items";
 import { TEventsItemsProps } from "./types";

@@ -1,13 +1,15 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { eventsReducer } from "../slices/events";
 import {
 	TypedUseSelectorHook,
 	useDispatch as dispatchHook,
 	useSelector as selectorHook,
 } from 'react-redux';
+import { eventsReducer } from "../slices/events";
+import { bookingReducer } from "../slices/booking";
 
 const rootReducer = combineReducers({
-    eventsReducer
+    eventsReducer,
+	bookingReducer
 });
 
 export const store = configureStore({

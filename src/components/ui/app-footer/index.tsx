@@ -7,7 +7,7 @@ export const AppFooterUI = () => {
       <div className={styles.container}>
         <div className={styles.about}>
           <h3>Freezebee Афиша</h3>
-          <p>Этот сервис — часть моей курсовой работы. Все события вымышленные, но все равно спасибо, что заглянули!</p>
+          <p>Этот сервис — часть моей курсовой работы. Все мероприятия вымышленные, но все равно спасибо, что заглянули!</p>
         </div>
 
         <div className={styles.links}>

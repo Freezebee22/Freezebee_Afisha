@@ -12,8 +12,8 @@ export const AppHeaderUI = ({username}: TAppHeaderUIProps) => {
 
       <nav className={styles.nav}>
         <Link to="/" className={styles.navItem}>Главная</Link>
-        <Link to="/events" className={styles.navItem}>События</Link>
         <Link to="/categories" className={styles.navItem}>Категории</Link>
+        <Link to="/booking" className={styles.navItem}>Корзина</Link>
         {username ? <Link to="/profile" className={styles.navItem}>Профиль</Link> : <></>}
       </nav>
 

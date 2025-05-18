@@ -3,7 +3,7 @@ import styles from './event-info.module.css'
 import { ticketsCase } from '../../../utils/tickets_case';
 import { memo } from 'react';
 
-export const EventInfoUI = memo(({event, count, onClick}: TEventInfoUIProps) => {
+export const EventInfoUI = memo(({event, count, onClick, onSubmit}: TEventInfoUIProps) => {
     return (
         <div className={styles.wrapper}>
             <img className={styles.image} src={event.image} alt={event.title} />
@@ -23,7 +23,7 @@ export const EventInfoUI = memo(({event, count, onClick}: TEventInfoUIProps) => 
                 <button onClick={() => onClick(-1)} className={styles.counterBtn} disabled={count <= 0}>-</button>
                 <p className={styles.count}>{count}</p>
                 <button onClick={() => onClick(1)} className={styles.counterBtn} disabled={count >= 8}>+</button>
-                <button className={styles.buyBtn} disabled={count === 0}>
+                <button className={styles.buyBtn} disabled={count === 0} onClick={onSubmit}>
                     {event.price
                     ? `Купить ${count} ${ticketsCase(count)} за ${count * event.price}₽`
                     : `Забронировать ${count} ${ticketsCase(count)}`}

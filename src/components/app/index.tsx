@@ -9,6 +9,7 @@ import { Home } from "../../pages/home";
 import { Preloader } from "../preloader";
 import { Modal } from "../modal/modal";
 import { EventInfo } from "../event-info";
+import { BookingPage } from "../../pages/booking";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -25,33 +26,34 @@ const App = () => {
 	};
 
     return (
-        <>
+        <div className="page">
             <AppHeader/>
-
-            <Routes location={backgroundLocation || location}>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/event/:id" element={
-                    <Modal title='' onClose={handleModalClose}>
-                        <EventInfo/>
-                    </Modal>}
-                />
-            </Routes>
-
-            {backgroundLocation &&
-                <Routes>
-                    <Route
-                        path="/event/:id"
-                        element={
-                            <Modal title='' onClose={handleModalClose}>
-                                <EventInfo/>
-                            </Modal>
-                        }
+            <main className="main">
+                <Routes location={backgroundLocation || location}>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/booking" element={<BookingPage />}/>
+                    <Route path="/event/:id" element={
+                        <Modal title='' onClose={handleModalClose}>
+                            <EventInfo/>
+                        </Modal>}
                     />
                 </Routes>
-            }
 
+                {backgroundLocation &&
+                    <Routes>
+                        <Route
+                            path="/event/:id"
+                            element={
+                                <Modal title='' onClose={handleModalClose}>
+                                    <EventInfo/>
+                                </Modal>
+                            }
+                        />
+                    </Routes>
+                }
+            </main>
             <AppFooter/>
-        </>
+        </div>
     )
 }
 

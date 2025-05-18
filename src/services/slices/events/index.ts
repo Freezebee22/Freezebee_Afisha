@@ -7,13 +7,13 @@ export const fetchEvents = createAsyncThunk(
     async () => await getEventsApi()
 );
 
-type TIngredientsState = {
+type TEventsState = {
     isLoading: boolean;
     error: null | SerializedError;
     data: TEvents[];
 };
 
-const initialState: TIngredientsState = {
+const initialState: TEventsState = {
     isLoading: true,
     error: null,
     data: []
