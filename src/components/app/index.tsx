@@ -10,6 +10,7 @@ import { Preloader } from "../preloader";
 import { Modal } from "../modal/modal";
 import { EventInfo } from "../event-info";
 import { BookingPage } from "../../pages/booking";
+import { PaymentPage } from "../../pages/payment";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -32,6 +33,7 @@ const App = () => {
                 <Routes location={backgroundLocation || location}>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/booking" element={<BookingPage />}/>
+                    <Route path="/booking/payment" element={<PaymentPage />}/>
                     <Route path="/event/:id" element={
                         <Modal title='' onClose={handleModalClose}>
                             <EventInfo/>

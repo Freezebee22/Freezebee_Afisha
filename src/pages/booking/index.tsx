@@ -3,7 +3,7 @@ import styles from './booking.module.css';
 import { useDispatch } from 'react-redux';
 import { useSelector } from '../../services/store';
 import { clearBooking, removeBooking } from '../../services/slices/booking';
-import { ticketsCase } from '../../utils/tickets_case';
+import { ticketsCase } from '../../utils/tickets-case';
 
 export const BookingPage = () => {
     const navigate = useNavigate();
@@ -17,6 +17,10 @@ export const BookingPage = () => {
 
     const handleClear = () => {
         dispatch(clearBooking());
+    };
+
+    const handleSubmit = () => {
+        navigate("payment");  
     };
 
     return (
@@ -59,8 +63,8 @@ export const BookingPage = () => {
                         <button className={styles.clearBtn} onClick={handleClear}>
                             Очистить корзину
                         </button>
-                        <button className={styles.submitBtn} onClick={()=>{}}>
-                            Оформить
+                        <button className={styles.submitBtn} onClick={handleSubmit}>
+                            Перейти к оформлению
                         </button>
                     </div>
                 </>

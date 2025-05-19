@@ -1,6 +1,6 @@
 import {TEventInfoUIProps} from './types'
 import styles from './event-info.module.css'
-import { ticketsCase } from '../../../utils/tickets_case';
+import { ticketsCase } from '../../../utils/tickets-case';
 import { memo } from 'react';
 
 export const EventInfoUI = memo(({event, count, onClick, onSubmit}: TEventInfoUIProps) => {
