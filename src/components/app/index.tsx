@@ -11,6 +11,7 @@ import { Modal } from "../modal/modal";
 import { EventInfo } from "../event-info";
 import { BookingPage } from "../../pages/booking";
 import { PaymentPage } from "../../pages/payment";
+import { SuccessPage } from "../../pages/success";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -34,6 +35,7 @@ const App = () => {
                     <Route path="/" element={<Home/>}/>
                     <Route path="/booking" element={<BookingPage />}/>
                     <Route path="/booking/payment" element={<PaymentPage />}/>
+                    <Route path="/booking/success" element={<SuccessPage />}/>
                     <Route path="/event/:id" element={
                         <Modal title='' onClose={handleModalClose}>
                             <EventInfo/>

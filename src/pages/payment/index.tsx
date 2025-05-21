@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "../../services/store";
+import { useDispatch, useSelector } from "../../services/store";
 import { PaymentFields } from "../../components/payment-fields";
-import { fetchDecryptedCardInfo, getFakeStripeToken } from "../../utils/user-card";
+import { fetchDecryptedCardInfo, getFakeStripeToken, removeFakeToken } from "../../utils/user-card";
 import styles from "./payment.module.css";
+import { formatCardNumber, formatPhone } from "../../utils/formatter";
+import { useNavigate } from "react-router-dom";
+import { clearBooking } from "../../services/slices/booking";
 
 export const PaymentPage = () => {
     const {userEmail, userPhone} = {userEmail: "", userPhone: ""}; //useSelector(store => store.userReducer); потом будет
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const [emailState, setEmailState] = useState(userEmail || "");
     const [phoneState, setPhoneState] = useState(userPhone || "");
@@ -41,9 +46,20 @@ export const PaymentPage = () => {
         //setMaskedCard(null);
     };
 
+    const handleSubmit = () => {
+        const isCorrectPhone = phoneState.length === 18;
+        const isCorrectEmail = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/.test(emailState);
+        if (isCorrectEmail && isCorrectPhone) {
+            dispatch(clearBooking());
+            // TODO: отправлять в локал сторадж корзину
+            navigate("/booking/success");
+        }
+    };
+
     return (
         <div className={styles.wrapper}>
             <input
+                type={"email"}
                 className={styles.input}
                 placeholder="E-mail"
                 value={emailState}
@@ -53,21 +69,38 @@ export const PaymentPage = () => {
                 className={styles.input}
                 placeholder="Номер телефона"
                 value={phoneState}
-                onChange={(e) => setPhoneState(e.target.value)}
+                maxLength={18}
+                onChange={(e) => setPhoneState(formatPhone(e.target.value))}//{(e) => handlePhoneState(e.target)}
+                onClick={() => !phoneState ? setPhoneState("+7 (") : {}}
             />
             {showCardFields ? (
                 <>
                     <PaymentFields
                         cardNumber={cardNumber}
-                        setCardNumber={(e) => setCardNumber(e.target.value)}
+                        setCardNumber={(e) => setCardNumber(formatCardNumber(e.target.value))}
                         cardOwner={cardOwner}
                         setCardOwner={(e) => setCardOwner(e.target.value.toUpperCase())}
                         cardCode={cardCode}
                         setCardCode={(e) => setCardCode(e.target.value)}
                     />
-                    <button className={styles.button} onClick={handleSaveCard}>
-                        Сохранить карту
-                    </button>
+                    <div className={styles.buttons}>
+                        <button className={styles.button} onClick={() => setShowCardFields(false)}>
+                            ←
+                        </button>
+                        <button className={`${styles.button} ${styles.buttonSave}`} onClick={handleSaveCard}>
+                            Сохранить карту
+                        </button> 
+                        <button className={styles.button} onClick={() => {
+                            removeFakeToken(); 
+                            setShowCardFields(false);
+                            setCardNumber("");
+                            setCardCode("");
+                            setCardOwner("");
+                            setMaskedCard("");
+                        }}>
+                            🗑️
+                        </button>
+                    </div>
                 </>
             ) : (
                 <button
@@ -77,7 +110,7 @@ export const PaymentPage = () => {
                     {maskedCard && maskedCard.length > 15 ? maskedCard : "Добавить карту"}
                 </button>
             )}
-            <button className={styles.button} onClick={() => {}}>
+            <button className={styles.button} onClick={handleSubmit}>
                 Подтвердить
             </button>
         </div>

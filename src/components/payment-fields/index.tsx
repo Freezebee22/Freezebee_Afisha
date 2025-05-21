@@ -1,6 +1,7 @@
+import { memo } from "react";
 import { PaymentFieldsUI } from "../ui/payment-fields";
 import { TPaymentFieldsProps } from "./types";
 
-export const PaymentFields = (props: TPaymentFieldsProps) => (
+export const PaymentFields = memo((props: TPaymentFieldsProps) => (
     <PaymentFieldsUI {...props}/>
-)
+));
