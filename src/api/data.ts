@@ -16,7 +16,7 @@ export const data: TEvents[] = [
     title: "Выставка современного искусства",
     description: "Сотни произведений от молодых и признанных художников России.",
     categories: ["Искусство", "Выставка"],
-    image: "https://images.unsplash.com/photo-1628642881538-b80bfc5209de?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://kudamoscow.ru/uploads/04eec757ce37371d45532ba7297e8f40.jpg",
     location: "Центральный выставочный зал «Манеж», Санкт-Петербург",
     date: "2025-06-10T12:00:00",
     price: 1500,

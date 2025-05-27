@@ -7,6 +7,14 @@
   margin: 0 auto;
 }
 
+.container {
+  max-width: calc(3 * 360px + 2 * 24px);
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: sans-serif;
+}
+
+
 .h {
     margin-left: 24px;
 }

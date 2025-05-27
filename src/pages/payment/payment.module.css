@@ -18,6 +18,16 @@
   border-radius: 8px;
 }
 
+.label {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #555;
+}
+
 .buttons {
   display: flex;
   flex-direction: row;
@@ -47,4 +57,8 @@
 .cardToggleButton {
   background-color: #e0e7ff;
   color: #1e3a8a;
+}
+
+.cardToggleButton:hover {
+  background-color: #cfdaff;
 }

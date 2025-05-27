@@ -8,7 +8,7 @@ export const EventsItemsUI = memo(({events}: TEventsItemsUIProps) => {
     const location = useLocation();
 
     return (
-        <>
+        <div className={styles.container}>
             <h1 className={styles.h}>Все события</h1>
             <div className={styles.grid}>
                 {events.map(ev => (
@@ -17,6 +17,6 @@ export const EventsItemsUI = memo(({events}: TEventsItemsUIProps) => {
                     </Link>
                 ))}
             </div>  
-        </>
+        </div>
     );
 })

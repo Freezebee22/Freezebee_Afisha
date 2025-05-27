@@ -67,21 +67,25 @@ export const PaymentPage = () => {
 
     return (
         <div className={styles.wrapper}>
-            <input
-                type={"email"}
-                className={styles.input}
-                placeholder="E-mail"
-                value={emailState}
-                onChange={(e) => setEmailState(e.target.value)}
-            />
-            <input
-                className={styles.input}
-                placeholder="Номер телефона"
-                value={phoneState}
-                maxLength={18}
-                onChange={(e) => setPhoneState(formatPhone(e.target.value))}//{(e) => handlePhoneState(e.target)}
-                onClick={() => !phoneState ? setPhoneState("+7 (") : {}}
-            />
+            <label className={styles.label}>
+                Контактные данные
+                <input
+                    type={"email"}
+                    className={styles.input}
+                    placeholder="E-mail"
+                    value={emailState}
+                    onChange={(e) => setEmailState(e.target.value)}
+                />
+                <input
+                    className={styles.input}
+                    placeholder="Номер телефона"
+                    value={phoneState}
+                    maxLength={18}
+                    onChange={(e) => setPhoneState(formatPhone(e.target.value))}//{(e) => handlePhoneState(e.target)}
+                    onClick={() => !phoneState ? setPhoneState("+7 (") : {}}
+                />
+            </label>
+            <p className={styles.label} style={{margin: 0}}>Данные для оплаты</p>
             {showCardFields ? (
                 <>
                     <PaymentFields

@@ -14,6 +14,7 @@ import { PaymentPage } from "../../pages/payment";
 import { SuccessPage } from "../../pages/success";
 import { ProfilePage } from "../../pages/profile";
 import { fetchUser } from "../../services/slices/user";
+import { CategoriesPage } from "../../pages/categories";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -40,6 +41,7 @@ const App = () => {
                     <Route path="/booking/payment" element={<PaymentPage />}/>
                     <Route path="/booking/success" element={<SuccessPage />}/>
                     <Route path="/profile" element={<ProfilePage />}/>
+                    <Route path="/categories" element={<CategoriesPage />} />
                     <Route path="/event/:id" element={
                         <Modal title='' onClose={handleModalClose}>
                             <EventInfo/>
