@@ -1,5 +1,6 @@
-import { createAsyncThunk, createSlice, SerializedError } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction, SerializedError } from "@reduxjs/toolkit";
 import { TEvents } from "../../../api/types";
+import { TBookingState as TTickets } from "../booking";
 
 export const fetchUser = createAsyncThunk(
     'fetch/user',
@@ -9,22 +10,33 @@ export const fetchUser = createAsyncThunk(
 
 export const setUserData = createAsyncThunk(
     'post/user',
-    async (data: TUser) => {
-        await localStorage.setItem('userData', JSON.stringify(data)); // await здесь лишь для имитации запроса на сервер
-        return data;
+    async (partialData: Partial<TUser>) => {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
+        const currentData = JSON.parse(localStorage.getItem('userData') || '{}') as TUser;
+        const newData: TUser = {
+            ...currentData,
+            ...partialData,
+            tickets: [
+                ...(currentData?.tickets || []),
+                ...(partialData?.tickets || [])
+            ]
+        };
+        localStorage.setItem('userData', JSON.stringify(newData));
+        return newData;
     }
 );
 
-type TUser = {
+export type TUser = {
     name: string,
     email: string,
     phone: string,
-    payment: {
+    payment?: {
         number: string,
         owner: string,
         code: string,
     } | null,
-    tickets: TEvents | null,
+    tickets: TTickets,
 };
 
 type TUserState = {
@@ -41,7 +53,7 @@ const initialState: TUserState = {
         email: "",
         phone: "",
         payment: null,
-        tickets: null,
+        tickets: [],
     }
 }
 
@@ -50,7 +62,9 @@ const slice = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        
+        setTickets(state, action: PayloadAction<TTickets>) {
+            state.data.tickets.push(...action.payload);
+        }
     },
     extraReducers: (builder) => {
         builder
@@ -66,6 +80,21 @@ const slice = createSlice({
         .addCase(fetchUser.rejected, (state, action) => {
             state.isLoading = false;
             state.error = action.error;
+        })
+        .addCase(setUserData.pending, (state) => {
+            state.isLoading = true,
+            state.error = null
+        })
+        .addCase(setUserData.fulfilled, (state, action) => {
+            state.isLoading = false;
+            state.error = null;
+        })
+        .addCase(setUserData.rejected, (state, action) => {
+            state.isLoading = false;
+            state.error = action.error;
         });
     }
 });
+
+export const {setTickets} = slice.actions;
+export const userReducer = slice.reducer;

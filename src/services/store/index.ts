@@ -6,10 +6,12 @@ import {
 } from 'react-redux';
 import { eventsReducer } from "../slices/events";
 import { bookingReducer } from "../slices/booking";
+import { userReducer } from "../slices/user";
 
 const rootReducer = combineReducers({
     eventsReducer,
-	bookingReducer
+	bookingReducer,
+	userReducer
 });
 
 export const store = configureStore({

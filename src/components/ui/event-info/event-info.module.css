@@ -81,7 +81,11 @@
   font-size: 1.25rem;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.1s ease;
+}
+
+.counterBtn:active {
+  transform: scale(0.98);
 }
 
 .counterBtn:disabled {
@@ -97,14 +101,22 @@
 }
 
 .buyBtn {
-  background-color: #4caf50;
+  background-color: #80cfd3;
   color: white;
   border: none;
   padding: 10px 18px;
   border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.buyBtn:active {
+  transform: scale(0.98);
+}
+
+.buyBtn:hover {
+  background-color: rgb(36, 197, 173);
 }
 
 .buyBtn:disabled {

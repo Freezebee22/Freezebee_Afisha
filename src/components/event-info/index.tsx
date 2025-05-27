@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { Preloader } from '../preloader';
 import { setBooking } from '../../services/slices/booking';
 
-export const EventInfo = () => {
+export const EventInfo = ({bought}: TEventInfoProps) => {
     const { id } = useParams<{ id: string }>();
     const event = useSelector(store => store.eventsReducer.data.find(e => String(e.id) === id));
     const isLoading = useSelector(store => store.eventsReducer.isLoading);
@@ -26,5 +26,5 @@ export const EventInfo = () => {
         navigate("/booking");
     };
 
-    return <EventInfoUI event={event} count={count} onClick={handleClick} onSubmit={handleSubmit} />;
+    return <EventInfoUI event={event} count={count} _bought={bought} onClick={handleClick} onSubmit={handleSubmit} />;
 };

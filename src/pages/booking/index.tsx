@@ -20,6 +20,7 @@ export const BookingPage = () => {
     };
 
     const handleSubmit = () => {
+        
         navigate("payment");  
     };
 

@@ -6,11 +6,13 @@ import styles from "./payment.module.css";
 import { formatCardNumber, formatPhone } from "../../utils/formatter";
 import { useNavigate } from "react-router-dom";
 import { clearBooking } from "../../services/slices/booking";
+import { setTickets, setUserData } from "../../services/slices/user";
 
 export const PaymentPage = () => {
-    const {userEmail, userPhone} = {userEmail: "", userPhone: ""}; //useSelector(store => store.userReducer); потом будет
+    const {email: userEmail, phone: userPhone} = useSelector(store => store.userReducer.data);
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const bookedTickets = useSelector(store => store.bookingReducer);
 
     const [emailState, setEmailState] = useState(userEmail || "");
     const [phoneState, setPhoneState] = useState(userPhone || "");
@@ -31,6 +33,11 @@ export const PaymentPage = () => {
         }
     }, []);
 
+    useEffect(() => {
+        setEmailState(userEmail);
+        setPhoneState(userPhone);
+    }, [userEmail, userPhone]);
+
     const handleSaveCard = () => {
         //if (cardNumber && cardOwner && cardCode) {
             const token = getFakeStripeToken(cardNumber, cardOwner, cardCode);
@@ -50,6 +57,8 @@ export const PaymentPage = () => {
         const isCorrectPhone = phoneState.length === 18;
         const isCorrectEmail = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/.test(emailState);
         if (isCorrectEmail && isCorrectPhone) {
+            dispatch(setTickets(bookedTickets));
+            dispatch(setUserData({tickets: bookedTickets}));
             dispatch(clearBooking());
             // TODO: отправлять в локал сторадж корзину
             navigate("/booking/success");

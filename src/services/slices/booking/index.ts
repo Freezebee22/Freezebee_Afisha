@@ -6,7 +6,7 @@ type TBookingPayload = {
     count: number
 };
 
-type TBookingState = TBookingPayload[];
+export type TBookingState = TBookingPayload[];
 
 const initialState: TBookingState = [];
 

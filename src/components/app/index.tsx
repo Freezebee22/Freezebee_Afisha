@@ -12,6 +12,8 @@ import { EventInfo } from "../event-info";
 import { BookingPage } from "../../pages/booking";
 import { PaymentPage } from "../../pages/payment";
 import { SuccessPage } from "../../pages/success";
+import { ProfilePage } from "../../pages/profile";
+import { fetchUser } from "../../services/slices/user";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -20,6 +22,7 @@ const App = () => {
     const backgroundLocation = location.state?.backgroundLocation;
     
     useEffect(() => {
+        dispatch(fetchUser());
         dispatch(fetchEvents());
     }, [dispatch]);
 
@@ -36,9 +39,15 @@ const App = () => {
                     <Route path="/booking" element={<BookingPage />}/>
                     <Route path="/booking/payment" element={<PaymentPage />}/>
                     <Route path="/booking/success" element={<SuccessPage />}/>
+                    <Route path="/profile" element={<ProfilePage />}/>
                     <Route path="/event/:id" element={
                         <Modal title='' onClose={handleModalClose}>
                             <EventInfo/>
+                        </Modal>}
+                    />
+                    <Route path="/profile/:id" element={
+                        <Modal title='' onClose={handleModalClose}>
+                            <EventInfo bought/>
                         </Modal>}
                     />
                 </Routes>
@@ -53,6 +62,11 @@ const App = () => {
                                 </Modal>
                             }
                         />
+                        <Route path="/profile/:id" element={
+                            <Modal title='' onClose={handleModalClose}>
+                                <EventInfo bought/>
+                            </Modal>}
+                    />
                     </Routes>
                 }
             </main>
