@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction, SerializedError } from "@reduxjs/toolkit";
-import { TEvents } from "../../../api/types";
+import { TEvents, TLoginData, TRegisterData } from "../../../api/types";
 import { TBookingState as TTickets } from "../booking";
+import { loginUserApi, registerUserApi } from "../../../api";
 
 export const fetchUser = createAsyncThunk(
     'fetch/user',
@@ -27,6 +28,50 @@ export const setUserData = createAsyncThunk(
     }
 );
 
+export const register = createAsyncThunk<TRegisterData, TRegisterData>(
+    'register/user',
+    async (data) => {
+        const response = await registerUserApi(data);
+        return response;
+    }
+);
+
+export const login = createAsyncThunk<boolean, TLoginData>(
+    'login/user',
+    async (data, { rejectWithValue }) => {
+        const response = await loginUserApi(data);
+        const currentData = JSON.parse(localStorage.getItem('userData') || '{}') as TUser;
+        console.log(currentData);
+        if (!Object.keys(currentData).length) {
+            return rejectWithValue(false);
+        } else {
+            localStorage.setItem('auth', 'true');
+            return true;
+        }
+    }
+);
+
+export const logout = createAsyncThunk<boolean>(
+    'logout/user',
+    async () => {
+        localStorage.removeItem('auth');
+        return true;
+    }
+);
+
+/*export const logout = createAsyncThunk(
+    'user/logout',
+    async (_, { rejectWithValue }) => {
+        const response = await logoutApi();
+
+        if (!response.success) {
+            return rejectWithValue(response);
+        }
+
+        clearTokens();
+    }
+);*/
+
 export type TUser = {
     name: string,
     email: string,
@@ -41,13 +86,16 @@ export type TUser = {
 
 type TUserState = {
     isLoading: boolean,
-    error: SerializedError | null,
+    isAuthChecked?: boolean;
+    isAuthenticated: boolean;
+    loginError?: boolean;
+    registerError?: boolean;
     data: TUser
 }
 
 const initialState: TUserState = {
     isLoading: false,
-    error: null,
+    isAuthenticated: false,
     data: {
         name: "",
         email: "",
@@ -69,29 +117,48 @@ const slice = createSlice({
     extraReducers: (builder) => {
         builder
         .addCase(fetchUser.pending, (state) => {
-            state.isLoading = true,
-            state.error = null
+            state.isLoading = true;
+            state.isAuthChecked = false;
         })
         .addCase(fetchUser.fulfilled, (state, action) => {
             state.isLoading = false;
-            state.error = null;
             state.data = action.payload;
+            state.isAuthenticated = true;
+            state.isAuthChecked = true;
         })
         .addCase(fetchUser.rejected, (state, action) => {
             state.isLoading = false;
-            state.error = action.error;
         })
         .addCase(setUserData.pending, (state) => {
-            state.isLoading = true,
-            state.error = null
+            state.isLoading = true;
         })
         .addCase(setUserData.fulfilled, (state, action) => {
             state.isLoading = false;
-            state.error = null;
         })
         .addCase(setUserData.rejected, (state, action) => {
             state.isLoading = false;
-            state.error = action.error;
+        })
+        .addCase(login.rejected, (state) => {
+            state.loginError = true;
+        })
+        .addCase(login.fulfilled, (state) => {
+            state.loginError = false;
+            state.isAuthenticated = true;
+        })
+        .addCase(register.rejected, (state) => {
+            state.registerError = true;
+        })
+        .addCase(register.fulfilled, (state, action) => {
+            state.registerError = false;
+            state.data = {
+                ...state.data, 
+                name: action.payload.name,
+                email: action.payload.email
+            };
+            state.isAuthenticated = true;
+        })
+        .addCase(logout.fulfilled, (state) => {
+            state = initialState;
         });
     }
 });

@@ -6,7 +6,7 @@ export const PaymentFieldsUI = memo((props: TPaymentFieldsUIProps) => (
     <fieldset className={styles.fieldset}>
         <input
             className={styles.input}
-            placeholder="Номер карты*"
+            placeholder="Номер карты"
             value={props.cardNumber}
             onChange={props.setCardNumber}
             maxLength={19}
@@ -14,7 +14,7 @@ export const PaymentFieldsUI = memo((props: TPaymentFieldsUIProps) => (
         />
         <input
             className={styles.input}
-            placeholder="Имя владельца*"
+            placeholder="Имя владельца"
             value={props.cardOwner}
             onChange={props.setCardOwner}
             maxLength={20}
@@ -22,7 +22,7 @@ export const PaymentFieldsUI = memo((props: TPaymentFieldsUIProps) => (
         <input
             className={styles.input}
             type="password"
-            placeholder="CVC/CVV*"
+            placeholder="CVC/CVV"
             value={props.cardCode}
             onChange={props.setCardCode}
             maxLength={3}

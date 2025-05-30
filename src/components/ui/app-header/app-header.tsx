@@ -14,10 +14,21 @@ export const AppHeaderUI = ({username}: TAppHeaderUIProps) => {
         <Link to="/" className={styles.navItem}>Главная</Link>
         <Link to="/categories" className={styles.navItem}>Категории</Link>
         <Link to="/booking" className={styles.navItem}>Корзина</Link>
-        {username ? <Link to="/profile" className={styles.navItem}>Профиль</Link> : <></>}
+        {username ? 
+          <Link to="/profile" className={styles.navItem}>Профиль</Link> 
+          : <></>
+        }
       </nav>
-
-      <div className={styles.username}>👤 {username || "Войти"}</div>
+      
+      {username ? 
+        <Link to="/profile" className={styles.username}>
+          <div>👤 {username}</div>
+        </Link>
+        : 
+        <Link to="/login" className={styles.username}>
+          <div>👤 {"Войти"}</div>
+        </Link>
+      }
     </header>
     );
 }

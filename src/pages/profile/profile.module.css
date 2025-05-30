@@ -156,6 +156,16 @@
   cursor: not-allowed;
 }
 
+.logoutButton {
+  margin-top: 50px;
+  background-color: #ed8e79; /* красная кнопка для логической выразительности */
+}
+
+.logoutButton:hover {
+  background-color: #e59888;
+}
+
+
 .saveContainer {
     display: flex;
     align-items: center;

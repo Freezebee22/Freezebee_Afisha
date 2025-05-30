@@ -85,7 +85,7 @@ export const PaymentPage = () => {
                     onClick={() => !phoneState ? setPhoneState("+7 (") : {}}
                 />
             </label>
-            <p className={styles.label} style={{margin: 0}}>Данные для оплаты</p>
+            <p className={styles.label} style={{margin: 0}}>Данные для оплаты*</p>
             {showCardFields ? (
                 <>
                     <PaymentFields

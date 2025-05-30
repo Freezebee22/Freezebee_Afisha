@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useDispatch } from "../../services/store";
+import { useDispatch, useSelector } from "../../services/store";
 import { AppHeader } from "../app-header";
 import { EventsItems } from "../events-items";
 import { fetchEvents } from "../../services/slices/events";
@@ -15,15 +15,21 @@ import { SuccessPage } from "../../pages/success";
 import { ProfilePage } from "../../pages/profile";
 import { fetchUser } from "../../services/slices/user";
 import { CategoriesPage } from "../../pages/categories";
+import { LoginPage } from "../../pages/login";
+import { RegisterPage } from "../../pages/register";
+import { ProtectedRoute } from "../protected-route";
 
 const App = () => {
     const dispatch = useDispatch();
     const location = useLocation();
     const navigate = useNavigate();
+    const isAuthenticated = localStorage.getItem('auth') || '';
     const backgroundLocation = location.state?.backgroundLocation;
     
     useEffect(() => {
-        dispatch(fetchUser());
+        if (isAuthenticated) {
+            dispatch(fetchUser());
+        }
         dispatch(fetchEvents());
     }, [dispatch]);
 
@@ -37,19 +43,23 @@ const App = () => {
             <main className="main">
                 <Routes location={backgroundLocation || location}>
                     <Route path="/" element={<Home/>}/>
-                    <Route path="/booking" element={<BookingPage />}/>
-                    <Route path="/booking/payment" element={<PaymentPage />}/>
-                    <Route path="/booking/success" element={<SuccessPage />}/>
-                    <Route path="/profile" element={<ProfilePage />}/>
+                    <Route element={<ProtectedRoute />}>
+                        <Route path="/booking" element={<BookingPage />}/>
+                        <Route path="/booking/payment" element={<PaymentPage />}/>
+                        <Route path="/booking/success" element={<SuccessPage />}/>
+                        <Route path="/profile" element={<ProfilePage />}/>
+                        <Route path="/profile/:id" element={
+                        <Modal title='' onClose={handleModalClose}>
+                            <EventInfo bought/>
+                        </Modal>}
+                    />
+                    </Route>
                     <Route path="/categories" element={<CategoriesPage />} />
+                    <Route path="/login" element={<LoginPage />} />
+                    <Route path="/register" element={<RegisterPage />} />
                     <Route path="/event/:id" element={
                         <Modal title='' onClose={handleModalClose}>
                             <EventInfo/>
-                        </Modal>}
-                    />
-                    <Route path="/profile/:id" element={
-                        <Modal title='' onClose={handleModalClose}>
-                            <EventInfo bought/>
                         </Modal>}
                     />
                 </Routes>
@@ -64,11 +74,13 @@ const App = () => {
                                 </Modal>
                             }
                         />
-                        <Route path="/profile/:id" element={
-                            <Modal title='' onClose={handleModalClose}>
-                                <EventInfo bought/>
-                            </Modal>}
-                    />
+                        <Route element={<ProtectedRoute />}>
+                            <Route path="/profile/:id" element={
+                                <Modal title='' onClose={handleModalClose}>
+                                    <EventInfo bought/>
+                                </Modal>}
+                            />
+                        </Route>
                     </Routes>
                 }
             </main>

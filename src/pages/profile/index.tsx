@@ -5,9 +5,9 @@ import styles from "./profile.module.css";
 import { fetchDecryptedCardInfo, getFakeStripeToken, removeFakeToken } from "../../utils/user-card";
 import { useDispatch, useSelector } from "../../services/store";
 import { ticketsCase } from "../../utils/tickets-case";
-import { fetchUser, setUserData, TUser } from "../../services/slices/user";
+import { fetchUser, logout, setUserData, TUser } from "../../services/slices/user";
 import { Preloader } from "../../components/preloader";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 
 export const ProfilePage = () => {
@@ -31,6 +31,7 @@ export const ProfilePage = () => {
 
     const dispatch = useDispatch();
     const location = useLocation();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const token = localStorage.getItem("card_token");
@@ -69,6 +70,10 @@ export const ProfilePage = () => {
         dispatch(setUserData(data));
     };
 
+    const handleLogout = () => {
+        dispatch(logout());
+        window.location.href = "/login";
+    };
 
 
     return (
@@ -157,6 +162,11 @@ export const ProfilePage = () => {
                             {maskedCard && maskedCard.length > 15 ? maskedCard : "Добавить карту"}
                         </button>
                     )}
+                    <div>
+                        <button className={`${styles.saveButton} ${styles.logoutButton}`} onClick={handleLogout}>
+                            Выйти из аккаунта
+                        </button>
+                    </div>
                 </div>
 
                 <div className={styles.ticketsPanel}>
@@ -164,8 +174,8 @@ export const ProfilePage = () => {
                     {tickets.length ? (
                         <div className={styles.list}>
                             {tickets.map(({ event, count }) => (
-                                <Link to={`${event.id}`} state={{ backgroundLocation: location }} style={{ textDecoration: "none" }}>
-                                    <div className={styles.card} key={event.id}>
+                                <Link to={`${event.id}`} state={{ backgroundLocation: location }} style={{ textDecoration: "none" }}  key={event.id}>
+                                    <div className={styles.card}>
                                             <img src={event.image} alt={event.title} className={styles.image} />
                                             <div className={styles.cardContent}>
                                                 <div className={styles.cardLeft}>

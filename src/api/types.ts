@@ -8,3 +8,14 @@ export type TEvents = {
     date: string,
     price: number,
 }
+
+export type TLoginData = {
+	email: string;
+	password: string;
+};
+
+export type TRegisterData = {
+    name: string,
+	email: string;
+	password: string;
+};
