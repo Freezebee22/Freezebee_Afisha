@@ -24,6 +24,7 @@ export const ProfilePage = () => {
     const [cardOwner, setCardOwner] = useState("");
     const [cardCode, setCardCode] = useState("");
     const [maskedCard, setMaskedCard] = useState<string | null>(null);
+    const [isIncorrect, setIsIncorrect] = useState(false);
 
     const [nameState, setNameState] = useState(userName);
     const [emailState, setEmailState] = useState(userEmail);
@@ -61,13 +62,18 @@ export const ProfilePage = () => {
     };
 
     const handleSaveContacts = () => {
-        const data: TUser = {
-            name: nameState,
-            phone: phoneState,
-            email: emailState,
-            tickets
-        };
-        dispatch(setUserData(data));
+        if (!nameState || !phoneState || !emailState) {
+            setIsIncorrect(true);
+        } else {
+            setIsIncorrect(false);
+            const data: TUser = {
+                name: nameState,
+                phone: phoneState,
+                email: emailState,
+                tickets: []
+            };
+            dispatch(setUserData(data));
+        }
     };
 
     const handleLogout = () => {
@@ -118,6 +124,13 @@ export const ProfilePage = () => {
                             (
                                 <p className={styles.successMessage}>
                                     Данные успешно сохранены!
+                                </p>
+                            )
+                        }
+                        {isIncorrect &&
+                            (
+                                <p className={styles.incorrectMessage}>
+                                    Введены некорректные данные!
                                 </p>
                             )
                         }

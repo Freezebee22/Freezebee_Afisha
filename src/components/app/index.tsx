@@ -18,6 +18,7 @@ import { CategoriesPage } from "../../pages/categories";
 import { LoginPage } from "../../pages/login";
 import { RegisterPage } from "../../pages/register";
 import { ProtectedRoute } from "../protected-route";
+import { NotFoundPage } from "../../pages/not-found";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -42,6 +43,7 @@ const App = () => {
             <AppHeader/>
             <main className="main">
                 <Routes location={backgroundLocation || location}>
+                    <Route path="*" element={<NotFoundPage/>}/>
                     <Route path="/" element={<Home/>}/>
                     <Route element={<ProtectedRoute />}>
                         <Route path="/booking" element={<BookingPage />}/>

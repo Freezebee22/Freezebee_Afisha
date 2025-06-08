@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice, PayloadAction, SerializedError } from "@
 import { TEvents, TLoginData, TRegisterData } from "../../../api/types";
 import { TBookingState as TTickets } from "../booking";
 import { loginUserApi, registerUserApi } from "../../../api";
+import { fetchEvents } from "../events";
 
 export const fetchUser = createAsyncThunk(
     'fetch/user',
@@ -32,6 +33,7 @@ export const register = createAsyncThunk<TRegisterData, TRegisterData>(
     'register/user',
     async (data) => {
         const response = await registerUserApi(data);
+        localStorage.setItem('auth', 'true');
         return response;
     }
 );
@@ -116,9 +118,12 @@ const slice = createSlice({
     },
     extraReducers: (builder) => {
         builder
+        .addCase(fetchEvents.fulfilled, (state) => {
+            state.isAuthChecked = true;
+        })
         .addCase(fetchUser.pending, (state) => {
             state.isLoading = true;
-            state.isAuthChecked = false;
+            //state.isAuthChecked = false;
         })
         .addCase(fetchUser.fulfilled, (state, action) => {
             state.isLoading = false;
@@ -140,10 +145,12 @@ const slice = createSlice({
         })
         .addCase(login.rejected, (state) => {
             state.loginError = true;
+            state.isAuthChecked = true;
         })
         .addCase(login.fulfilled, (state) => {
             state.loginError = false;
             state.isAuthenticated = true;
+            state.isAuthChecked = true;
         })
         .addCase(register.rejected, (state) => {
             state.registerError = true;
@@ -156,6 +163,7 @@ const slice = createSlice({
                 email: action.payload.email
             };
             state.isAuthenticated = true;
+            state.isAuthChecked = true;
         })
         .addCase(logout.fulfilled, (state) => {
             state = initialState;

@@ -21,7 +21,7 @@ export const RegisterPage = () => {
 
         await dispatch(register({ name: userName, email, password }));
         await dispatch(setUserData({name: userName, email}));
-        navigate('/profile'/*, { replace: true }*/);
+        navigate('/profile', { replace: true });
 	};
 
 	return (
