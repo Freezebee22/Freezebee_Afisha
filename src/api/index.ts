@@ -1,11 +1,18 @@
-import { data } from "./data";
 import { TEvents, TLoginData, TRegisterData } from "./types";
 
+const URL = process.env.API_URL;
+
 export const getEventsApi = () => {
-    return new Promise<TEvents[]>((resolve) => {
-        setTimeout(() => {
-            resolve(data);
-        }, 500);
+    return new Promise<TEvents[]>((resolve, reject) => {
+        setTimeout(async () => {
+            const response = await fetch(`${URL}/events`);
+            if (response?.ok) {
+                const data = await response.json();
+                resolve(data);
+            } else {
+                reject('Ошибка соединения');
+            }
+        }, 300);
     });
 };
 
