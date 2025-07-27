@@ -83,7 +83,6 @@ export const ProfilePage = () => {
         navigate("/login");
     };
 
-
     return (
         <>
             <div className={styles.container}>

@@ -196,6 +196,7 @@ const slice = createSlice({
         })
         .addCase(setUserData.fulfilled, (state, action) => {
             state.isLoading = false;
+            state.data = { ...action.payload, tickets: state.data.tickets };
         })
         .addCase(setUserData.rejected, (state, action) => {
             state.isLoading = false;

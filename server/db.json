@@ -275,58 +275,24 @@
   ],
   "users": [
     {
-      "id": "c080",
+      "id": "bea5",
       "email": "qwe@qwe.qwe",
-      "name": "qweqwe",
-      "passwordHash": "$2b$10$zgYtcW/dtcAhX4In0CAfp.LpIUzPdcHngPR65oFdRAQ6zevKVhpYi",
+      "name": "Гаррош Адский Крик",
+      "passwordHash": "$2b$10$ofqIQHOHOvknnHkrZcvOUePbmj2TFGXJ3..AYdxwmJ4JIPQfCiss.",
       "role": "user",
       "phone": "+7 (456) 789-12-34",
       "tickets": [
         {
-          "eventId": "2",
-          "count": 4
-        },
-        {
-          "eventId": "12",
-          "count": 3
-        },
-        {
-          "eventId": "19",
-          "count": 6
-        },
-        {
-          "eventId": "1",
-          "count": 3
-        }
-      ]
-    },
-    {
-      "id": "a542",
-      "email": "qwe@qwe2.qwe",
-      "name": "qweqwe2",
-      "passwordHash": "$2b$10$F9RABgSJXaNCmbQy/h1ftu02BIzodOZbRyhCqXo6MVcWEmVXeRmXy",
-      "role": "user",
-      "phone": "+7 (456) 456-78-90",
-      "tickets": [
-        {
-          "eventId": "20",
-          "count": 5
-        },
-        {
-          "eventId": "2",
-          "count": 3
-        },
-        {
-          "eventId": "3",
-          "count": 4
-        },
-        {
-          "eventId": "1",
-          "count": 4
-        },
-        {
-          "eventId": "20",
+          "eventId": "7",
           "count": 2
+        },
+        {
+          "eventId": "9",
+          "count": 3
+        },
+        {
+          "eventId": "15",
+          "count": 3
         }
       ]
     }
