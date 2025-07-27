@@ -13,7 +13,7 @@ import { BookingPage } from "../../pages/booking";
 import { PaymentPage } from "../../pages/payment";
 import { SuccessPage } from "../../pages/success";
 import { ProfilePage } from "../../pages/profile";
-import { fetchUser } from "../../services/slices/user";
+import { fetchUser, initializeAuth } from "../../services/slices/user";
 import { CategoriesPage } from "../../pages/categories";
 import { LoginPage } from "../../pages/login";
 import { RegisterPage } from "../../pages/register";
@@ -24,13 +24,10 @@ const App = () => {
     const dispatch = useDispatch();
     const location = useLocation();
     const navigate = useNavigate();
-    const isAuthenticated = localStorage.getItem('auth') || '';
     const backgroundLocation = location.state?.backgroundLocation;
     
     useEffect(() => {
-        if (isAuthenticated) {
-            dispatch(fetchUser());
-        }
+        dispatch(initializeAuth());
         dispatch(fetchEvents());
     }, [dispatch]);
 

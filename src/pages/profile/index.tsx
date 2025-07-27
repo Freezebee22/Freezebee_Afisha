@@ -70,15 +70,17 @@ export const ProfilePage = () => {
                 name: nameState,
                 phone: phoneState,
                 email: emailState,
-                tickets: []
+                role: 'user',
+                tickets: tickets
             };
             dispatch(setUserData(data));
         }
     };
 
-    const handleLogout = () => {
-        dispatch(logout());
-        window.location.href = "/login";
+    const handleLogout = async () => {
+        await dispatch(logout());
+        //window.location.href = "/login";
+        navigate("/login");
     };
 
 
@@ -184,7 +186,7 @@ export const ProfilePage = () => {
 
                 <div className={styles.ticketsPanel}>
                     <h2 className={styles.panelTitle}>Ваши билеты</h2>
-                    {tickets.length ? (
+                    {tickets?.length ? (
                         <div className={styles.list}>
                             {tickets.map(({ event, count }) => (
                                 <Link to={`${event.id}`} state={{ backgroundLocation: location }} style={{ textDecoration: "none" }}  key={event.id}>

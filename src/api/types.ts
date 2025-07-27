@@ -1,3 +1,5 @@
+import { TBookingState } from "../services/slices/booking";
+
 export type TEvents = {
     id: number,
     title: string,
@@ -19,3 +21,13 @@ export type TRegisterData = {
 	email: string;
 	password: string;
 };
+
+export type TUserData = {
+    id: string,
+    name: string,
+    email: string,
+    phone: string,
+    passwordHash: string,
+    role: 'user' | 'admin',
+    tickets: TBookingState
+}

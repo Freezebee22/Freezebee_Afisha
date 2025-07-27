@@ -10,7 +10,7 @@ export const LoginPage = () => {
 	const location = useLocation();
 
 	const { from } = location.state || { from: { pathname: '/' } };
-    const { loginError } = useSelector(store => store.userReducer);
+    const loginError = useSelector(store => store.userReducer.error);
 
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
@@ -20,10 +20,10 @@ export const LoginPage = () => {
         e.preventDefault();
         try {
             await dispatch(login({ email, password })).unwrap();
-            await dispatch(fetchUser());
+            //await dispatch(fetchUser());
             navigate(from.pathname, { replace: true });
         } catch (err) {
-            setErrorText('Введены неверные данные');
+            setErrorText(loginError || 'Введены неверные данные');
     }
 	};
 

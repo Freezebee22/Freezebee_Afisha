@@ -6,10 +6,10 @@ import styles from "./payment.module.css";
 import { formatCardNumber, formatPhone } from "../../utils/formatter";
 import { useNavigate } from "react-router-dom";
 import { clearBooking } from "../../services/slices/booking";
-import { setTickets, setUserData } from "../../services/slices/user";
+import { setTickets, setUserData, TTicketsDB } from "../../services/slices/user";
 
 export const PaymentPage = () => {
-    const {email: userEmail, phone: userPhone} = useSelector(store => store.userReducer.data);
+    const {email: userEmail, phone: userPhone, tickets} = useSelector(store => store.userReducer.data);
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const bookedTickets = useSelector(store => store.bookingReducer);
@@ -58,7 +58,13 @@ export const PaymentPage = () => {
         const isCorrectEmail = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/.test(emailState);
         if (isCorrectEmail && isCorrectPhone) {
             dispatch(setTickets(bookedTickets));
-            dispatch(setUserData({tickets: bookedTickets}));
+            dispatch(setUserData({
+                tickets:
+                    [...tickets.map(ticket => {
+                        return {eventId: ticket.event.id, count: ticket.count}}),
+                    ...bookedTickets.map(ticket => {
+                        return {eventId: ticket.event.id, count: ticket.count}})]
+            }));
             dispatch(clearBooking());
             // TODO: отправлять в локал сторадж корзину
             navigate("/booking/success");
