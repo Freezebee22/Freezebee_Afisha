@@ -165,6 +165,20 @@
   background-color: #e59888;
 }
 
+.downButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items:last baseline;
+}
+
+.adminLink {
+  color: #678ee8;
+}
+
+.adminLink:hover {
+  color: #95ace1;
+}
+
 
 .saveContainer {
     display: flex;

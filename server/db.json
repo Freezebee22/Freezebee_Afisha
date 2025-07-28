@@ -279,22 +279,27 @@
       "email": "qwe@qwe.qwe",
       "name": "Гаррош Адский Крик",
       "passwordHash": "$2b$10$ofqIQHOHOvknnHkrZcvOUePbmj2TFGXJ3..AYdxwmJ4JIPQfCiss.",
-      "role": "user",
+      "role": "admin",
       "phone": "+7 (456) 789-12-34",
       "tickets": [
         {
-          "eventId": "7",
-          "count": 2
-        },
-        {
-          "eventId": "9",
+          "eventId": "3",
           "count": 3
         },
         {
-          "eventId": "15",
-          "count": 3
+          "eventId": "13",
+          "count": 5
         }
       ]
+    },
+    {
+      "id": "5f29",
+      "email": "user@qwe.qwe",
+      "name": "user",
+      "passwordHash": "$2b$10$js9Bq5F6NV3rEmz4lKvdie8wI7sdsjk0Yfyz5fApAJ41tXCMvYlnO",
+      "role": "user",
+      "phone": "",
+      "tickets": []
     }
   ]
 }

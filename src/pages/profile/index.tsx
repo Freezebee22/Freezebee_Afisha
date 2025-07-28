@@ -15,6 +15,7 @@ export const ProfilePage = () => {
         name: userName,
         email: userEmail, 
         phone: userPhone,
+        role,
         tickets
     } = useSelector(store => store.userReducer.data);
     const isLoading = useSelector(store => store.userReducer.isLoading);
@@ -66,12 +67,11 @@ export const ProfilePage = () => {
             setIsIncorrect(true);
         } else {
             setIsIncorrect(false);
-            const data: TUser = {
+            const data = {
                 name: nameState,
                 phone: phoneState,
                 email: emailState,
-                role: 'user',
-                tickets: tickets
+                
             };
             dispatch(setUserData(data));
         }
@@ -176,10 +176,11 @@ export const ProfilePage = () => {
                             {maskedCard && maskedCard.length > 15 ? maskedCard : "Добавить карту"}
                         </button>
                     )}
-                    <div>
+                    <div className={styles.downButtons}>
                         <button className={`${styles.saveButton} ${styles.logoutButton}`} onClick={handleLogout}>
                             Выйти из аккаунта
                         </button>
+                        {role === "admin" && <Link to="/admin-panel" className={styles.adminLink}>Открыть админ-панель</Link>}
                     </div>
                 </div>
 

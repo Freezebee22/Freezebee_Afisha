@@ -19,6 +19,7 @@ import { LoginPage } from "../../pages/login";
 import { RegisterPage } from "../../pages/register";
 import { ProtectedRoute } from "../protected-route";
 import { NotFoundPage } from "../../pages/not-found";
+import { AdminPage } from "../../pages/admin";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -52,6 +53,9 @@ const App = () => {
                             <EventInfo bought/>
                         </Modal>}
                     />
+                    </Route>
+                    <Route element={<ProtectedRoute adminOnly/>}>
+                        <Route path="/admin-panel" element={<AdminPage />}/>
                     </Route>
                     <Route path="/categories" element={<CategoriesPage />} />
                     <Route path="/login" element={<LoginPage />} />
