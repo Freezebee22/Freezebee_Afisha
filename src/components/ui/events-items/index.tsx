@@ -12,7 +12,7 @@ export const EventsItemsUI = memo(({events}: TEventsItemsUIProps) => {
             <h1 className={styles.h}>Все события</h1>
             <div className={styles.grid}>
                 {events.map(ev => (
-                    <Link to={`/event/${ev.id}`} key={ev.id} state={{ backgroundLocation: location }} style={{ textDecoration: "none" }}>
+                    <Link to={`event/${ev.id}`} key={ev.id} state={{ backgroundLocation: location }} style={{ textDecoration: "none" }}>
                         <EventsItem event={ev}/>
                     </Link>
                 ))}

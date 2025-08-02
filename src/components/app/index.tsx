@@ -20,6 +20,7 @@ import { RegisterPage } from "../../pages/register";
 import { ProtectedRoute } from "../protected-route";
 import { NotFoundPage } from "../../pages/not-found";
 import { AdminPage } from "../../pages/admin";
+import { EventEdit } from "../event-edit";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -49,13 +50,18 @@ const App = () => {
                         <Route path="/booking/success" element={<SuccessPage />}/>
                         <Route path="/profile" element={<ProfilePage />}/>
                         <Route path="/profile/:id" element={
-                        <Modal title='' onClose={handleModalClose}>
-                            <EventInfo bought/>
-                        </Modal>}
+                            <Modal title='' onClose={handleModalClose}>
+                                <EventInfo bought/>
+                            </Modal>}
                     />
                     </Route>
                     <Route element={<ProtectedRoute adminOnly/>}>
-                        <Route path="/admin-panel" element={<AdminPage />}/>
+                        <Route path="/admin" element={<AdminPage />}/>
+                        <Route path="/admin/event/:id" element={
+                            <Modal title='' onClose={handleModalClose}>
+                                <EventEdit/>
+                            </Modal>}
+                        />
                     </Route>
                     <Route path="/categories" element={<CategoriesPage />} />
                     <Route path="/login" element={<LoginPage />} />
@@ -82,6 +88,13 @@ const App = () => {
                                 <Modal title='' onClose={handleModalClose}>
                                     <EventInfo bought/>
                                 </Modal>}
+                            />
+                        </Route>
+                        <Route element={<ProtectedRoute adminOnly/>}>
+                            <Route path="/admin/event/:id" element={
+                                <Modal title='' onClose={handleModalClose}>
+                                    <EventEdit/>
+                                </Modal>} 
                             />
                         </Route>
                     </Routes>

@@ -180,7 +180,7 @@ export const ProfilePage = () => {
                         <button className={`${styles.saveButton} ${styles.logoutButton}`} onClick={handleLogout}>
                             Выйти из аккаунта
                         </button>
-                        {role === "admin" && <Link to="/admin-panel" className={styles.adminLink}>Открыть админ-панель</Link>}
+                        {role === "admin" && <Link to="/admin" className={styles.adminLink}>Открыть админ-панель</Link>}
                     </div>
                 </div>
 

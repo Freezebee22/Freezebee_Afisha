@@ -19,6 +19,18 @@ export const getEventsApi = () => {
     });
 };
 
+export const setEventApi = async (data: TEvents) => {
+    const response = await fetch(`${URL}/events/${data.id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    });
+    
+    if (!response?.ok) throw new Error('Ошибка соединения');
+
+    return response.json();
+};
+
 export const loginUserApi = async ({email, password}: TLoginData) => {
     const response = await fetch(`${URL}/users?email=${email}`);
     const user = (await response.json())[0] as TUserData;
