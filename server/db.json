@@ -1,21 +1,21 @@
 {
   "events": [
     {
-      "id": "1",
-      "title": "Musical festival «SummerSound»",
-      "description": "qqqqqqqqq qqqqqqqqqqq qqqqqqqqqqqqq qqqqqqqqqq qqqqqqqqqqqqq qqqqqqqqqqqqqqqqqq qqqqq qq qqqqqqqqqq",
+      "id": 1,
+      "title": "Музыкальный фестиваль «ЛетоЗвук»",
+      "description": "Открытый фестиваль под открытым небом с участием локальных и зарубежных групп.",
       "categories": [
         "Музыка",
         "Фестиваль",
         "На свежем воздухе"
       ],
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi3vlT5dDAjGcfFMvv4WTu5P-go2UphNmvbQ&s",
-      "location": "Парк Горького, Москвач",
+      "image": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Парк Горького, Москва",
       "date": "2026-02-28T00:00:00",
-      "price": 9999999
+      "price": 1000
     },
     {
-      "id": "2",
+      "id": 2,
       "title": "Выставка современного искусства",
       "description": "Сотни произведений от молодых и признанных художников России.",
       "categories": [
@@ -28,7 +28,7 @@
       "price": 1500
     },
     {
-      "id": "3",
+      "id": 3,
       "title": "Театральная постановка «Гамлет»",
       "description": "Классика Шекспира в современной интерпретации от театра «Современник».",
       "categories": [
@@ -41,7 +41,7 @@
       "price": 1300
     },
     {
-      "id": "4",
+      "id": 4,
       "title": "Открытый мастер-класс по акварели",
       "description": "Научитесь основам акварельной живописи в парке.",
       "categories": [
@@ -55,7 +55,7 @@
       "price": 800
     },
     {
-      "id": "5",
+      "id": 5,
       "title": "Ночь кино",
       "description": "Показ трёх фильмов подряд на большом экране под звездами.",
       "categories": [
@@ -68,7 +68,7 @@
       "price": 700
     },
     {
-      "id": "6",
+      "id": 6,
       "title": "Фестиваль еды и напитков",
       "description": "Попробуйте кухни народов мира, лекции от шефов и мастер-классы.",
       "categories": [
@@ -82,7 +82,7 @@
       "price": 300
     },
     {
-      "id": "7",
+      "id": 7,
       "title": "Благотворительный марафон",
       "description": "Забег в поддержку фонда помощи детям. Все средства идут на благотворительность.",
       "categories": [
@@ -96,7 +96,7 @@
       "price": 0
     },
     {
-      "id": "8",
+      "id": 8,
       "title": "Лекция: Искусственный интеллект и будущее",
       "description": "Обсуждаем, как ИИ изменит работу, обучение и нашу жизнь.",
       "categories": [
@@ -110,7 +110,7 @@
       "price": 0
     },
     {
-      "id": "9",
+      "id": 9,
       "title": "Концерт симфонической музыки",
       "description": "Выступление государственного симфонического оркестра под открытым небом.",
       "categories": [
@@ -123,7 +123,7 @@
       "price": 1800
     },
     {
-      "id": "10",
+      "id": 10,
       "title": "Фестиваль настольных игр",
       "description": "Для всех возрастов: от UNO до Dungeons & Dragons.",
       "categories": [
@@ -137,7 +137,7 @@
       "price": 0
     },
     {
-      "id": "11",
+      "id": 11,
       "title": "Показ мод молодых дизайнеров",
       "description": "Талантливые дизайнеры представляют свои коллекции на летнем подиуме.",
       "categories": [
@@ -150,7 +150,7 @@
       "price": 0
     },
     {
-      "id": "12",
+      "id": 12,
       "title": "Турнир по шахматам",
       "description": "Прими участие или поболей за лучших шахматистов города.",
       "categories": [
@@ -164,7 +164,7 @@
       "price": 0
     },
     {
-      "id": "13",
+      "id": 13,
       "title": "Open mic: стендап вечер",
       "description": "Вечер открытого микрофона — посмейся вместе с нами!",
       "categories": [
@@ -178,7 +178,7 @@
       "price": 100
     },
     {
-      "id": "14",
+      "id": 14,
       "title": "Детский праздник с анимацией",
       "description": "Прыжки на батуте, аниматоры, конкурсы и подарки.",
       "categories": [
@@ -191,7 +191,7 @@
       "price": 400
     },
     {
-      "id": "15",
+      "id": 15,
       "title": "Ярмарка хендмейда",
       "description": "Уникальные изделия ручной работы от мастеров по всей стране.",
       "categories": [
@@ -204,7 +204,7 @@
       "price": 0
     },
     {
-      "id": "16",
+      "id": 16,
       "title": "Летний лекторий по экологии",
       "description": "Цикл лекций на тему устойчивого развития и зелёных технологий.",
       "categories": [
@@ -218,7 +218,7 @@
       "price": 0
     },
     {
-      "id": "17",
+      "id": 17,
       "title": "Караоке-баттл",
       "description": "Соревнуемся за звание лучшего голоса вечера!",
       "categories": [
@@ -231,7 +231,7 @@
       "price": 0
     },
     {
-      "id": "18",
+      "id": 18,
       "title": "Турнир по киберспорту",
       "description": "Лучшие команды соревнуются в CS2, Valorant и LoL.",
       "categories": [
@@ -245,7 +245,7 @@
       "price": 0
     },
     {
-      "id": "19",
+      "id": 19,
       "title": "Ночь музеев",
       "description": "Музеи открыты до утра! Экскурсии, квесты и арт-инсталляции.",
       "categories": [
@@ -259,7 +259,7 @@
       "price": 600
     },
     {
-      "id": "20",
+      "id": 20,
       "title": "Йога в парке",
       "description": "Расслабляющая утренняя практика на свежем воздухе.",
       "categories": [
@@ -271,6 +271,415 @@
       "location": "Парк Победы, Москва",
       "date": "2025-07-04T08:00:00",
       "price": 0
+    },
+    {
+      "id": 21,
+      "title": "Фестиваль уличного искусства",
+      "description": "Граффити, перформансы и инсталляции от лучших уличных художников.",
+      "categories": [
+        "Искусство",
+        "Фестиваль",
+        "На свежем воздухе"
+      ],
+      "image": "https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?q=80&w=2015&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Арт-квартал, Екатеринбург",
+      "date": "2025-07-12T14:00:00",
+      "price": 0
+    },
+    {
+      "id": 22,
+      "title": "Концерт джазовой музыки",
+      "description": "Вечер джаза в исполнении лучших музыкантов страны.",
+      "categories": [
+        "Музыка",
+        "Джаз"
+      ],
+      "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Джаз-клуб «Эссе», Москва",
+      "date": "2025-07-08T20:00:00",
+      "price": 1200
+    },
+    {
+      "id": 23,
+      "title": "Мастер-класс по гончарному делу",
+      "description": "Создайте свою первую керамическую чашку под руководством мастера.",
+      "categories": [
+        "Творчество",
+        "Мастер-класс"
+      ],
+      "image": "https://images.unsplash.com/photo-1639762681057-4080d1f134a3?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Студия керамики «Глина», Санкт-Петербург",
+      "date": "2025-07-10T16:00:00",
+      "price": 1500
+    },
+    {
+      "id": 24,
+      "title": "Кинофестиваль короткометражных фильмов",
+      "description": "Показ лучших короткометражек от независимых режиссеров.",
+      "categories": [
+        "Кино",
+        "Фестиваль"
+      ],
+      "image": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Киноцентр «Родина», Москва",
+      "date": "2025-07-15T18:00:00",
+      "price": 500
+    },
+    {
+      "id": 25,
+      "title": "Фестиваль мороженого",
+      "description": "Дегустация необычных вкусов, конкурсы и развлечения для всей семьи.",
+      "categories": [
+        "Еда",
+        "Фестиваль",
+        "Семейное"
+      ],
+      "image": "https://images.unsplash.com/photo-1560008581-09826d1de69e?q=80&w=2044&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Парк «Сокольники», Москва",
+      "date": "2025-07-20T12:00:00",
+      "price": 300
+    },
+    {
+      "id": 26,
+      "title": "Велосипедный заезд по городу",
+      "description": "Массовый велопробег по центральным улицам с финишем в парке.",
+      "categories": [
+        "Спорт",
+        "На свежем воздухе"
+      ],
+      "image": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=2033&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Старт: Площадь Революции, Москва",
+      "date": "2025-07-22T09:00:00",
+      "price": 0
+    },
+    {
+      "id": 27,
+      "title": "Лекция по истории кино",
+      "description": "От немого кино до блокбастеров: как менялось киноискусство.",
+      "categories": [
+        "Кино",
+        "Образование",
+        "Культура"
+      ],
+      "image": "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Культурный центр «ЗИЛ», Москва",
+      "date": "2025-07-11T19:00:00",
+      "price": 0
+    },
+    {
+      "id": 28,
+      "title": "Концерт этнической музыки",
+      "description": "Звуки народных инструментов со всего мира в одном концерте.",
+      "categories": [
+        "Музыка",
+        "Этника",
+        "Культура"
+      ],
+      "image": "https://images.unsplash.com/photo-1511671782779-c97d3d27a5d4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Этнографический музей, Санкт-Петербург",
+      "date": "2025-07-14T18:30:00",
+      "price": 900
+    },
+    {
+      "id": 29,
+      "title": "Фотовыставка «Дикая природа России»",
+      "description": "Лучшие кадры дикой природы от фотографов-натуралистов.",
+      "categories": [
+        "Фотография",
+        "Искусство",
+        "Природа"
+      ],
+      "image": "https://images.unsplash.com/photo-1682686580391-615bd1365f32?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Галерея «ФотоДом», Москва",
+      "date": "2025-07-16T10:00:00",
+      "price": 400
+    },
+    {
+      "id": 30,
+      "title": "Кулинарный мастер-класс «Итальянская кухня»",
+      "description": "Готовим пасту, ризотто и тирамису с шеф-поваром.",
+      "categories": [
+        "Еда",
+        "Мастер-класс"
+      ],
+      "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Кулинарная студия «Вкусно», Москва",
+      "date": "2025-07-18T15:00:00",
+      "price": 2000
+    },
+    {
+      "id": 31,
+      "title": "Фестиваль воздушных змеев",
+      "description": "Запуск самых необычных воздушных змеев на побережье.",
+      "categories": [
+        "Фестиваль",
+        "Семейное",
+        "На свежем воздухе"
+      ],
+      "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Пляж «Волна», Сочи",
+      "date": "2025-07-23T12:00:00",
+      "price": 0
+    },
+    {
+      "id": 32,
+      "title": "Выставка ретро-автомобилей",
+      "description": "Классические автомобили XX века в одном месте.",
+      "categories": [
+        "Авто",
+        "Выставка",
+        "Ретро"
+      ],
+      "image": "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Автомузей, Москва",
+      "date": "2025-07-25T10:00:00",
+      "price": 800
+    },
+    {
+      "id": 33,
+      "title": "Танцевальный флешмоб",
+      "description": "Массовый танец под зажигательную музыку.",
+      "categories": [
+        "Танцы",
+        "Развлечения",
+        "На свежем воздухе"
+      ],
+      "image": "https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Центральная площадь, Казань",
+      "date": "2025-07-26T18:00:00",
+      "price": 0
+    },
+    {
+      "id": 34,
+      "title": "Литературный вечер с писателями",
+      "description": "Чтения, дискуссии и автограф-сессия с известными авторами.",
+      "categories": [
+        "Литература",
+        "Культура"
+      ],
+      "image": "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Дом книги, Санкт-Петербург",
+      "date": "2025-07-28T19:00:00",
+      "price": 0
+    },
+    {
+      "id": 35,
+      "title": "Фестиваль красок Холи",
+      "description": "Яркий праздник индийской культуры с музыкой и красками.",
+      "categories": [
+        "Фестиваль",
+        "Культура",
+        "На свежем воздухе"
+      ],
+      "image": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Парк Горького, Москва",
+      "date": "2025-07-30T14:00:00",
+      "price": 500
+    },
+    {
+      "id": 36,
+      "title": "Мастер-класс по каллиграфии",
+      "description": "Освойте искусство красивого письма под руководством мастера.",
+      "categories": [
+        "Творчество",
+        "Мастер-класс"
+      ],
+      "image": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Арт-студия «Перо», Москва",
+      "date": "2025-08-02T13:00:00",
+      "price": 1200
+    },
+    {
+      "id": 37,
+      "title": "Концерт электронной музыки",
+      "description": "Выступление топовых диджеев на открытой площадке.",
+      "categories": [
+        "Музыка",
+        "Электроника",
+        "Фестиваль"
+      ],
+      "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Клуб «ГЭЗ21», Москва",
+      "date": "2025-08-05T22:00:00",
+      "price": 1500
+    },
+    {
+      "id": 38,
+      "title": "Выставка LEGO-скульптур",
+      "description": "Огромные фигуры и инсталляции из конструктора LEGO.",
+      "categories": [
+        "Выставка",
+        "Семейное",
+        "Творчество"
+      ],
+      "image": "https://images.unsplash.com/photo-1600267165477-6d4cc741b379?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "ТРЦ «Галерея», Санкт-Петербург",
+      "date": "2025-08-08T11:00:00",
+      "price": 600
+    },
+    {
+      "id": 39,
+      "title": "Турнир по пинг-понгу",
+      "description": "Любительские и профессиональные соревнования по настольному теннису.",
+      "categories": [
+        "Спорт",
+        "Игры"
+      ],
+      "image": "https://images.unsplash.com/photo-1600267165477-6d4cc741b379?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Спорткомплекс «Олимп», Казань",
+      "date": "2025-08-10T10:00:00",
+      "price": 0
+    },
+    {
+      "id": 40,
+      "title": "Фестиваль уличной еды",
+      "description": "Бургеры, тако, десерты и многое другое от лучших фудтраков.",
+      "categories": [
+        "Еда",
+        "Фестиваль",
+        "На свежем воздухе"
+      ],
+      "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Парк «Зарядье», Москва",
+      "date": "2025-08-12T12:00:00",
+      "price": 0
+    },
+    {
+      "id": 41,
+      "title": "Квест по историческому центру",
+      "description": "Интерактивная экскурсия-игра по старинным улицам города.",
+      "categories": [
+        "Развлечения",
+        "История",
+        "Квест"
+      ],
+      "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Старт: Красная площадь, Москва",
+      "date": "2025-08-15T15:00:00",
+      "price": 700
+    },
+    {
+      "id": 42,
+      "title": "Выставка робототехники",
+      "description": "Интерактивная выставка последних достижений в робототехнике.",
+      "categories": [
+        "Технологии",
+        "Наука",
+        "Образование"
+      ],
+      "image": "https://images.unsplash.com/photo-1581093450021-4a7360e9a7d2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Технопарк «Сколково», Москва",
+      "date": "2025-08-18T10:00:00",
+      "price": 0
+    },
+    {
+      "id": 43,
+      "title": "Концерт классической гитары",
+      "description": "Исполнение произведений Вила-Лобоса, Альбениса и других композиторов.",
+      "categories": [
+        "Музыка",
+        "Классика"
+      ],
+      "image": "https://images.unsplash.com/photo-1511671782779-c97d3d27a5d4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Консерватория им. Чайковского, Москва",
+      "date": "2025-08-20T19:00:00",
+      "price": 1000
+    },
+    {
+      "id": 44,
+      "title": "Фестиваль мыльных пузырей",
+      "description": "Шоу гигантских пузырей, мастер-классы и конкурсы для детей.",
+      "categories": [
+        "Дети",
+        "Фестиваль",
+        "Семейное"
+      ],
+      "image": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Парк «Сокольники», Москва",
+      "date": "2025-08-22T12:00:00",
+      "price": 0
+    },
+    {
+      "id": 45,
+      "title": "Лекция по астрономии",
+      "description": "Наблюдение за звездами и рассказ о космосе от астрофизика.",
+      "categories": [
+        "Наука",
+        "Образование",
+        "Астрономия"
+      ],
+      "image": "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=2094&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Планетарий, Москва",
+      "date": "2025-08-25T21:00:00",
+      "price": 500
+    },
+    {
+      "id": 46,
+      "title": "Фестиваль красок Холи",
+      "description": "Яркий праздник индийской культуры с музыкой и красками.",
+      "categories": [
+        "Фестиваль",
+        "Культура",
+        "На свежем воздухе"
+      ],
+      "image": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Парк Горького, Москва",
+      "date": "2025-08-27T14:00:00",
+      "price": 500
+    },
+    {
+      "id": 47,
+      "title": "Выставка кошек",
+      "description": "Породистые кошки и коты со всей России в одной выставке.",
+      "categories": [
+        "Животные",
+        "Выставка",
+        "Семейное"
+      ],
+      "image": "https://images.unsplash.com/photo-1519052537078-e6302a4968d4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Экспоцентр, Москва",
+      "date": "2025-08-30T10:00:00",
+      "price": 400
+    },
+    {
+      "id": 48,
+      "title": "Танцевальный мастер-класс по сальсе",
+      "description": "Научитесь зажигательным движениям за один вечер!",
+      "categories": [
+        "Танцы",
+        "Мастер-класс"
+      ],
+      "image": "https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Танцевальная студия «Ritmo», Москва",
+      "date": "2025-09-02T19:00:00",
+      "price": 800
+    },
+    {
+      "id": 49,
+      "title": "Фестиваль уличного кино",
+      "description": "Показ короткометражных фильмов под открытым небом.",
+      "categories": [
+        "Кино",
+        "Фестиваль",
+        "На свежем воздухе"
+      ],
+      "image": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Парк «Зарядье», Москва",
+      "date": "2025-09-05T20:00:00",
+      "price": 0
+    },
+    {
+      "id": 50,
+      "title": "Мастер-класс по созданию комиксов",
+      "description": "Основы рисования и сторителлинга для начинающих.",
+      "categories": [
+        "Творчество",
+        "Мастер-класс"
+      ],
+      "image": "https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "location": "Арт-студия «Комикс», Санкт-Петербург",
+      "date": "2025-09-08T15:00:00",
+      "price": 1000
     }
   ],
   "users": [

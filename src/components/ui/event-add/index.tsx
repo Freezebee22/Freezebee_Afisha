@@ -1,23 +1,23 @@
-import {TEventEditModalProps} from './types'
-import styles from './event-edit.module.css'
+import {TEventAddModalProps} from './types'
+import styles from './event-add.module.css'
 import { ticketsCase } from '../../../utils/tickets-case';
 import { memo } from 'react';
 import { extraImg } from '../../../utils/extra-img';
 
-export const EventEditUI = memo(({ event, editedEvent, onSave, onChange, onCancel, onDelete }: TEventEditModalProps) => {
+export const EventAddUI = memo(({ newEvent, onSave, onChange, onCancel }: TEventAddModalProps) => {
     return (
         <div className={styles.wrapper}>
             <form onSubmit={onSave} className={styles.form}>
                 <div className={styles.imageContainer}>
                     <img 
-                        src={editedEvent.image || extraImg}
+                        src={newEvent.image || extraImg}
                         onError={(e) => e.currentTarget.src = extraImg} 
-                        alt={editedEvent.title} 
+                        alt={newEvent.title} 
                         className={styles.image} 
                     />
                     <input
                         type="text"
-                        value={editedEvent.image}
+                        value={newEvent.image}
                         onChange={(e) => onChange('image', e.target.value)}
                         placeholder="Ссылка на изображение"
                         className={styles.imageUrlInput}
@@ -27,14 +27,14 @@ export const EventEditUI = memo(({ event, editedEvent, onSave, onChange, onCance
                 <div className={styles.content}>
                     <input
                         className={styles.titleInput}
-                        value={editedEvent.title}
+                        value={newEvent.title}
                         onChange={(e) => onChange('title', e.target.value)}
                         placeholder="Название мероприятия"
                     />
 
                     <div className={styles.categoriesInputContainer}>
                         <input
-                            value={editedEvent.categories.join(', ')}
+                            value={newEvent.categories.join(', ')}
                             onChange={(e) => onChange('categories', e.target.value.split(',').map(s => s.trim()))}
                             placeholder="Категории (через запятую)"
                             className={styles.categoriesInput}
@@ -43,7 +43,7 @@ export const EventEditUI = memo(({ event, editedEvent, onSave, onChange, onCance
 
                     <textarea
                         className={styles.descriptionInput}
-                        value={editedEvent.description}
+                        value={newEvent.description}
                         onChange={(e) => onChange('description', e.target.value)}
                         placeholder="Описание"
                         rows={3}
@@ -54,7 +54,7 @@ export const EventEditUI = memo(({ event, editedEvent, onSave, onChange, onCance
                             <label className={styles.detailLabel}>Место проведения:</label>
                             <input
                                 className={styles.locationInput}
-                                value={editedEvent.location}
+                                value={newEvent.location}
                                 onChange={(e) => onChange('location', e.target.value)}
                                 placeholder="Введите место"
                             />
@@ -64,18 +64,18 @@ export const EventEditUI = memo(({ event, editedEvent, onSave, onChange, onCance
                             <label className={styles.detailLabel}>Дата и время:</label>
                             <input
                                 type="date"
-                                value={new Date(editedEvent.date).toLocaleDateString('en-CA')}
+                                value={new Date(newEvent.date).toLocaleDateString('en-CA')}
                                 onChange={(e) => onChange('date', e.target.value + 'T00:00:00')}
                                 className={styles.dateInput}
                             />
                         </div>
 
-                        {editedEvent.price !== undefined && (
+                        {newEvent.price !== undefined && (
                             <div className={styles.detailInput}>
                                 <label className={styles.detailLabel}>Цена билета (₽):</label>
                                 <input
                                     type="number"
-                                    value={editedEvent.price}
+                                    value={newEvent.price}
                                     onChange={(e) => onChange('price', Number(e.target.value))}
                                     placeholder="0"
                                     min="0"
@@ -87,13 +87,10 @@ export const EventEditUI = memo(({ event, editedEvent, onSave, onChange, onCance
 
                     <div className={styles.controls}>
                         <button type="button" onClick={onCancel} className={styles.cancelBtn}>
-                            Отменить изменения
+                            Отменить
                         </button>
                         <button type="submit" className={styles.saveBtn}>
-                            Сохранить
-                        </button>
-                        <button type="submit" onClick={() => onDelete(editedEvent.id)} className={styles.deleteBtn}>
-                            Удалить событие
+                            Добавить мероприятие
                         </button>
                     </div>
                 </div>

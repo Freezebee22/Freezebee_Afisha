@@ -31,6 +31,29 @@ export const setEventApi = async (data: TEvents) => {
     return response.json();
 };
 
+export const addEventApi = async (data: Omit<TEvents, "id">) => {
+    const response = await fetch(`${URL}/events`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    });
+    
+    if (!response?.ok) throw new Error('Ошибка соединения');
+
+    return response.json();
+};
+
+export const deleteEventApi = async (id: number) => {
+    const response = await fetch(`${URL}/events/${id}`, {
+        method: 'DELETE'
+    });
+    
+    if (!response?.ok) throw new Error('Ошибка соединения');
+
+    return id;
+};
+
+
 export const loginUserApi = async ({email, password}: TLoginData) => {
     const response = await fetch(`${URL}/users?email=${email}`);
     const user = (await response.json())[0] as TUserData;

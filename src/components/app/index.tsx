@@ -21,6 +21,7 @@ import { ProtectedRoute } from "../protected-route";
 import { NotFoundPage } from "../../pages/not-found";
 import { AdminPage } from "../../pages/admin";
 import { EventEdit } from "../event-edit";
+import { EventAdd } from "../event-add";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -62,6 +63,11 @@ const App = () => {
                                 <EventEdit/>
                             </Modal>}
                         />
+                        <Route path="/admin/event/add" element={
+                            <Modal title='' onClose={handleModalClose}>
+                                <EventAdd/>
+                            </Modal>}
+                        />
                     </Route>
                     <Route path="/categories" element={<CategoriesPage />} />
                     <Route path="/login" element={<LoginPage />} />
@@ -95,6 +101,11 @@ const App = () => {
                                 <Modal title='' onClose={handleModalClose}>
                                     <EventEdit/>
                                 </Modal>} 
+                            />
+                            <Route path="/admin/event/add" element={
+                                <Modal title='' onClose={handleModalClose}>
+                                    <EventAdd/>
+                                </Modal>}
                             />
                         </Route>
                     </Routes>

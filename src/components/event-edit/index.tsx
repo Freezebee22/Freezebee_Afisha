@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { Preloader } from '../preloader';
 import { setBooking } from '../../services/slices/booking';
 import { TEvents } from '../../api/types';
-import { editEvent } from '../../services/slices/events';
+import { deleteEvent, editEvent } from '../../services/slices/events';
 
 export const EventEdit = () => {
     const { id } = useParams<{ id: string }>();
@@ -38,11 +38,17 @@ export const EventEdit = () => {
         setEditedEvent(event);
     };
 
+    const handleDelete = (id: number) => {
+        dispatch(deleteEvent(id));
+        navigate(-1);
+    };
+
     return <EventEditUI 
                 event={event} 
                 editedEvent={editedEvent} 
                 onCancel={handleCancel} 
                 onChange={handleChange} 
-                onSave={handleSubmit} 
+                onSave={handleSubmit}
+                onDelete={handleDelete} 
             />;
 };

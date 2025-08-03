@@ -5,7 +5,7 @@ export const AdminPage = () => {
     return (
         <>
             <h1>Админ-панель</h1>
-            <EventsItems />
+            <EventsItems adminMode/>
         </>
     )
 }
