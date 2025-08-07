@@ -54,6 +54,35 @@ export const deleteEventApi = async (id: number) => {
 };
 
 
+
+export const getUsersApi = async () => {
+    const response = await fetch(`${URL}/users`);
+
+    if (!response?.ok) throw new Error('Ошибка соединения');
+
+    return response.json();
+};
+
+export const deleteUserApi = async (id: string) => {
+    const response = await fetch(`${URL}/users/${id}`, {
+        method: 'DELETE'
+    });
+    
+    if (!response?.ok) throw new Error('Ошибка соединения');
+
+    return id;
+};
+
+export const setUserRole = async (id: string, role: 'user' | 'admin') => {
+    const response = await fetch(`${URL}/users/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({role})
+    });
+
+    return response.json();
+};
+
 export const loginUserApi = async ({email, password}: TLoginData) => {
     const response = await fetch(`${URL}/users?email=${email}`);
     const user = (await response.json())[0] as TUserData;

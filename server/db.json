@@ -639,7 +639,7 @@
       "image": "https://images.unsplash.com/photo-1519052537078-e6302a4968d4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "location": "Экспоцентр, Москва",
       "date": "2025-08-30T10:00:00",
-      "price": 400
+      "price": 200
     },
     {
       "id": 48,
@@ -680,6 +680,19 @@
       "location": "Арт-студия «Комикс», Санкт-Петербург",
       "date": "2025-09-08T15:00:00",
       "price": 1000
+    },
+    {
+      "title": "Уборка местности",
+      "description": "Отличное времяпровождение, доброта к природе и очищенная родина.",
+      "categories": [
+        "Природа",
+        "Красота."
+      ],
+      "image": "https://www.yartsevo.ru/uploads/posts/2024-06/1717566285_d6-u5jboqoe.jpg",
+      "location": "Леса всей нашей МАТУШКИ РОССИИ",
+      "date": "2026-04-04T00:00:00",
+      "price": 1,
+      "id": 51
     }
   ],
   "users": [
@@ -692,11 +705,11 @@
       "phone": "+7 (456) 789-12-34",
       "tickets": [
         {
-          "eventId": "3",
+          "eventId": 3,
           "count": 3
         },
         {
-          "eventId": "13",
+          "eventId": 13,
           "count": 5
         }
       ]
@@ -719,32 +732,28 @@
       "phone": "",
       "tickets": [
         {
-          "eventId": "1",
+          "eventId": 1,
           "count": 4
         },
         {
-          "eventId": "2",
+          "eventId": 2,
           "count": 3
         }
       ]
     },
     {
-      "id": "83e3",
-      "email": "test2@test.test",
-      "name": "test2",
-      "passwordHash": "$2b$10$Jz5tR9Ws66CcURwhV6h.g.TuXK1Ns8FTOqXoV.1cuJUveX9Yd.lDO",
-      "role": "user",
-      "phone": "",
-      "tickets": []
-    },
-    {
-      "id": "da59",
-      "email": "test3@test.test",
-      "name": "test3",
-      "passwordHash": "$2b$10$jQifClTHSAjxAbjvztaSDuXSbEBlAke//PH99DG2EZX/6iZsteUgG",
-      "role": "user",
-      "phone": "",
-      "tickets": []
+      "email": "timofeybro03@gmail.com",
+      "name": "Гордон Фримeн",
+      "passwordHash": "$2b$10$vAmfxadvFmAQbKCd06mQJuuDNMU2DBRQ0qP67i07TRu4FaeU9RxfG",
+      "role": "admin",
+      "phone": "+7 (960) 090-78-18",
+      "tickets": [
+        {
+          "eventId": 6,
+          "count": 6
+        }
+      ],
+      "id": "WBDdZTY"
     }
   ]
 }

@@ -11,7 +11,7 @@ export const EventsItemsUI = memo(({events, adminMode, onClick}: TEventsItemsUIP
         <div className={styles.container}>
             <div className={styles.header}>
                 <h1 className={styles.h}>{adminMode ? "Редактирование событий" : "Все события"}</h1>
-                {adminMode && <button className={styles.addEvent} onClick={onClick}>+</button>}
+                {adminMode && <button className={styles.addEvent} onClick={onClick} title={"Добавить событие"}>+</button>}
             </div>
             <div className={styles.grid}>
                 {events.map(ev => (

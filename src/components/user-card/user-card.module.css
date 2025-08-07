@@ -1,0 +1,67 @@
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card.admin {
+  border-left: 4px solid #6a1b9a;
+}
+
+.mainInfo {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  cursor: pointer;
+  gap: 16px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: #3498db;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.textInfo {
+  flex-grow: 1;
+}
+
+.name {
+  margin: 0;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.adminBadge {
+  background: #6a1b9a;
+  color: white;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.email {
+  margin: 4px 0 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.toggle {
+  font-size: 12px;
+  color: #666;
+}
+
+.expandedContent {
+  padding: 0 16px 16px 72px;
+  border-top: 1px solid #eee;
+}

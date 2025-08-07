@@ -1,0 +1,97 @@
+.ticketsSection {
+  margin-bottom: 16px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  color: #333;
+  margin: 16px 0 8px;
+}
+
+.ticketsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ticketItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: #f9f9f9;
+  border-radius: 6px;
+}
+
+.eventName {
+  font-weight: 500;
+}
+
+.eventDate {
+  color: #666;
+  font-size: 14px;
+}
+
+.noTickets {
+  color: #666;
+  font-style: italic;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed #eee;
+}
+
+.button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.deleteButton {
+  background: #ffebee;
+  color: #d32f2f;
+}
+
+.deleteButton:hover {
+  background: #ffcdd2;
+}
+
+.grantAdmin {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.grantAdmin:hover {
+  background: #bbdefb;
+}
+
+.revokeAdmin {
+  background: #f3e5f5;
+  color: #8e24aa;
+}
+
+.revokeAdmin:hover {
+  background: #e1bee7;
+}
+
+.grantAdmin:disabled {
+  background: #e3f2fd;
+  color: #1976d2;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.revokeAdmin:disabled {
+  background: #f3e5f5;
+  color: #8e24aa;
+  opacity: 0.6;
+  cursor: not-allowed;
+}

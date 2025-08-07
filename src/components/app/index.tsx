@@ -22,12 +22,14 @@ import { NotFoundPage } from "../../pages/not-found";
 import { AdminPage } from "../../pages/admin";
 import { EventEdit } from "../event-edit";
 import { EventAdd } from "../event-add";
+import { UsersPage } from "../../pages/users";
 
 const App = () => {
     const dispatch = useDispatch();
     const location = useLocation();
     const navigate = useNavigate();
     const backgroundLocation = location.state?.backgroundLocation;
+    const isAdminPage = location.pathname.includes("admin");
     
     useEffect(() => {
         dispatch(initializeAuth());
@@ -40,7 +42,10 @@ const App = () => {
 
     return (
         <div className="page">
-            <AppHeader/>
+            { isAdminPage 
+                ? <AppHeader adminMode/>
+                : <AppHeader />
+            }
             <main className="main">
                 <Routes location={backgroundLocation || location}>
                     <Route path="*" element={<NotFoundPage/>}/>
@@ -58,6 +63,7 @@ const App = () => {
                     </Route>
                     <Route element={<ProtectedRoute adminOnly/>}>
                         <Route path="/admin" element={<AdminPage />}/>
+                        <Route path="/admin/users" element={<UsersPage />}/>
                         <Route path="/admin/event/:id" element={
                             <Modal title='' onClose={handleModalClose}>
                                 <EventEdit/>
