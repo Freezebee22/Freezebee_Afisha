@@ -1,0 +1,33 @@
+/* ScrollToTopButton.module.css */
+.button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #80cfd3;
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.button.visible {
+  opacity: 0.9;
+  visibility: visible;
+}
+
+.button:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+  background-color: #6cb8bc;
+}

@@ -742,18 +742,54 @@
       ]
     },
     {
-      "email": "timofeybro03@gmail.com",
-      "name": "Гордон Фримeн",
-      "passwordHash": "$2b$10$vAmfxadvFmAQbKCd06mQJuuDNMU2DBRQ0qP67i07TRu4FaeU9RxfG",
-      "role": "admin",
-      "phone": "+7 (960) 090-78-18",
+      "email": "test33@test.test",
+      "name": "test33",
+      "passwordHash": "$2b$10$IdoLzYoqJr66lKSROYkfpuSMns9e6tvBngaOvSgKtLz6gxyeISfbO",
+      "role": "user",
+      "phone": "",
+      "tickets": [],
+      "id": "0eEtFuI"
+    },
+    {
+      "email": "test44@test.test",
+      "name": "test44",
+      "passwordHash": "$2b$10$yeWzM6m.EqPeOzX84sEGPOJ1C0S5.NG5YIyCKVLT6WJLkJZPk6ES6",
+      "role": "user",
+      "phone": "+7 (333) 333-33-33",
+      "tickets": [],
+      "id": "4-FrDRL"
+    },
+    {
+      "email": "test55@test.test",
+      "name": "test55",
+      "passwordHash": "$2b$10$hCjCaun.Jxd1jjepiOstDeAJgsihwSVvcNiDlnBgyeaCS1KCkqj9W",
+      "role": "user",
+      "phone": "+7 (678) 767-87-44",
+      "tickets": [],
+      "id": "FvmV2za"
+    },
+    {
+      "email": "test66@test.test",
+      "name": "test66",
+      "passwordHash": "$2b$10$bD0Uzqs0ZQWnTa.BMcbDwuCRsrkUEXz3Ctj7oHZNB/TBLPH6Og3bi",
+      "role": "user",
+      "phone": "+7 (555) 555-55-55",
+      "tickets": [],
+      "id": "SJ0e_uc"
+    },
+    {
+      "email": "test77@test.test",
+      "name": "test77",
+      "passwordHash": "$2b$10$Pg33571GuUr3ocXsw5gThuXTiZvfht14fbT84NxwQdDrPGFUdRa26",
+      "role": "user",
+      "phone": "+7 (333) 333-33-33",
       "tickets": [
         {
-          "eventId": 6,
-          "count": 6
+          "eventId": 4,
+          "count": 3
         }
       ],
-      "id": "WBDdZTY"
+      "id": "6DIA--A"
     }
   ]
 }

@@ -1,4 +1,4 @@
-import { FC, SyntheticEvent, useState } from 'react';
+import { SyntheticEvent, useState } from 'react';
 import { useDispatch, useSelector } from '../../services/store';
 import { useNavigate, Link } from 'react-router-dom';
 import { register, setUserData } from '../../services/slices/user';
@@ -20,7 +20,7 @@ export const RegisterPage = () => {
         e.preventDefault();
 
         await dispatch(register({ name: userName, email, password }));
-        await dispatch(setUserData({name: userName, email}));
+        //await dispatch(setUserData({name: userName, email}));
         navigate('/profile', { replace: true });
 	};
 

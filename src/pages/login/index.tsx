@@ -23,7 +23,7 @@ export const LoginPage = () => {
             //await dispatch(fetchUser());
             navigate(from.pathname, { replace: true });
         } catch (err) {
-            setErrorText(loginError || 'Введены неверные данные');
+            //setErrorText(loginError || 'Введены неверные данные');
     }
 	};
 
@@ -60,7 +60,7 @@ export const LoginPage = () => {
 						Войти
 					</button>
 
-					{errorText && <p className={styles.error}>{errorText}</p>}
+					{loginError && <p className={styles.error}>{loginError}</p>}
 				</form>
 
 				<div className={styles.helper}>

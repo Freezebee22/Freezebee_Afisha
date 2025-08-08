@@ -53,7 +53,7 @@ export const UserInfo = ({ user, onRoleChange, onUsersDelete }: TUserInfoProps) 
                     className={`${styles.button} ${styles.deleteButton}`}
                     onClick={() => handleDelete(user.id)}
                 >
-                    Удалить
+                    Удалить пользователя
                 </button>
                 
                 <button
@@ -62,7 +62,7 @@ export const UserInfo = ({ user, onRoleChange, onUsersDelete }: TUserInfoProps) 
                     disabled={currUser.email === user.email}
                     title={currUser.email === user.email ? "Вы не можете изменить свою роль" : ""}
                 >
-                    {user.role === "admin" ? 'Забрать админку' : 'Сделать админом'}
+                    {user.role === "admin" ? 'Забрать права админа' : 'Сделать админом'}
                 </button>
             </div>
         </>

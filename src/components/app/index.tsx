@@ -23,6 +23,7 @@ import { AdminPage } from "../../pages/admin";
 import { EventEdit } from "../event-edit";
 import { EventAdd } from "../event-add";
 import { UsersPage } from "../../pages/users";
+import { ScrollToTopButton } from "../scrollToTopButton";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -117,6 +118,7 @@ const App = () => {
                     </Routes>
                 }
             </main>
+            <ScrollToTopButton />
             <AppFooter/>
         </div>
     )
